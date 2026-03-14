@@ -1,9 +1,9 @@
 /* ============================================
    TOKO TASHFIYAH - Script
-   Modern Islamic Store E-Commerce
+   Modern Islamic Store E-Commerce (Matrix Variant + Deskripsi Baru)
    ============================================ */
 
-// ── PRODUCT DATA (Matrix Variant + Deskripsi Baru) ──
+// ── PRODUCT DATA ──
 const products = [
   {
     id: 1,
@@ -84,7 +84,7 @@ const products = [
       "Putih|2.5cm": 65000,
       "Putih|3cm": 75000,
       "Putih|4cm": 95000,
-      "Putih|5cm": 125000,
+      "Putih|5cm": 125000
     },
     images: [
       "https://blogger.googleusercontent.com/img/a/AVvXsEgkWvPHGbMlFYuclswUn6hJasARuDYWlMVYhS7vyiN6pC8eavmZ8s9iQGA22NEPADA64B13CTpZlIhYfOsF1Q94lu4jG_YhSk9RNR41OwwaSpBJgugfm-GE51Kd1Okr4tOU5dIgYfbPsUEd_g-WDdDoK_FFHY0IOzOTvF8VmojcbbvRN9bvpvl9EKfe7SKU",
@@ -122,7 +122,7 @@ const products = [
     price: 220000,
     oldPrice: 250000,
     spec: "Isi ±1000 pcs | Hasil Rapi & Pekat",
-    description: "Label baju berbahan katun berkualitas yang memberikan kesan natural, eksklusif, dan ramah di kulit. Menggunakan teknik sablon berkualitas tinggi, hasil cetakan logo dan tulisan terlihat tajam, presisi, serta tahan lama. Bahan katun ini sangat diminati karena teksturnya yang lembut dan tidak gatal saat bersentuhan dengan kulit, sehingga sangat cocok untuk pakaian bayi, hijab, kaos, hingga pakaian butik premium.",
+    description: "Label baju berbahan katun berkualitas yang memberikan kesan natural, eksklusif, dan ramah di kulit. Menggunakan teknik sablon berkualitas tinggi, hasil cetakan logo dan tulisan terlihat tajam, presisi, serta tahan lama.",
     colors: ["Cream Sablon", "Hitam Sablon", "Putih Sablon"],
     sizes: ["1.3cm", "1.5cm", "2cm", "2.5cm", "3cm", "5cm"],
     combinations: {
@@ -154,40 +154,17 @@ const products = [
     price: 400000,
     oldPrice: 450000,
     spec: "Isi: ±1100pcs",
-    description: "Tingkatkan nilai brand pakaian Anda dengan label woven bordir berkualitas premium. Kami menyediakan dua jenis pilihan label yaitu Woven Damask dengan tekstur benang yang lebih rapat, halus, dan detail tajam untuk kesan eksklusif, serta Woven Standar yang awet dan ekonomis untuk kebutuhan massal. Label ini dibuat dengan sistem rajut/bordir sehingga desain logo tidak akan luntur meski dicuci berkali-kali.",
+    description: "Tingkatkan nilai brand pakaian Anda dengan label woven bordir berkualitas premium. Kami menyediakan dua jenis pilihan label yaitu Woven Damask dengan tekstur benang yang lebih rapat, halus, dan detail tajam.",
     colors: ["2 warna"],
-    sizes: ["1.8 x 6cm", "2,5 x 6cm", "3 x 6cm", "3.5 x 6cm", "4 x 6cm"],
+    sizes: ["1.8 x 6cm", "2.5 x 6cm", "3 x 6cm", "3.5 x 6cm", "4 x 6cm"],
     combinations: {
-      "2 warna|1.8 x 6cm": 400000, "2 warna|2,5 x 6cm": 450000, "2 warna|3 x 6cm": 500000,
+      "2 warna|1.8 x 6cm": 400000, "2 warna|2.5 x 6cm": 450000, "2 warna|3 x 6cm": 500000,
       "2 warna|3.5 x 6cm": 550000, "2 warna|4 x 6cm": 600000
     },
     images: [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjRzYM7p0pse3FzqSV-RaYRd7VvY1ukVucJQ&s",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsJ37icMShIT90DvLkRG1I1VqJByFkBq-wVg&s",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfX94kfLxRKzVmmSn6RYtOlnBP6YHVd-hU8g&s"
-    ]
-  },
-  {
-    id: 7,
-    name: "Custom Cetak Label Baju",
-    category: "Jasa Cetak",
-    price: 150000,
-    oldPrice: null,
-    spec: "Harga Per Roll (Sudah Termasuk Pita + Sablon)",
-    description: "Kami juga menerima jasa cetak label baju kustom dengan brand kamu sendiri. Gratis biaya desain. Silakan chat admin untuk konsultasi lebih lanjut.",
-    badge: null,
-    colors: ["Pita Katun (Cetak Hitam)", "Pita Satin (Cetak Emas)"],
-    sizes: ["Lebar 1.3cm", "Lebar 2cm"],
-    combinations: {
-      "Pita Katun (Cetak Hitam)|Lebar 1.3cm": 150000,
-      "Pita Katun (Cetak Hitam)|Lebar 2cm": 190000,
-      "Pita Satin (Cetak Emas)|Lebar 1.3cm": 170000,
-      "Pita Satin (Cetak Emas)|Lebar 2cm": 210000
-    },
-    images: [
-      "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3863Mf6hP6WkncM-fvnUvH1PZENO9FOaH7LJuRXBkfqQcFuih2Vcjwp3mYWFD2EGRzIFxzhNt1XO4RGokenNGmsvXtDsLB2egR8vHXYvaA25yMv-Ut96K0DrVZEYBEfyULWVnSDr0AN0r/s2048/IMG_20201213_164859.jpg",
-      "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjkMfFgX0Z_jld4miO8KwR-CAtL0ZTTwFDKnZEa-BGbiKrtNF0aYaO-c3P9RIxf2hm0DcCdpZNSscDqRaLOC_VoidCRsiXhMzOAK-s07zcxsCrcLe22_aBX9B2lVHQTJDbYLe98ONr5ze-I/s2048/IMG_20210206_150918.jpg",
-      "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg27xtDoeJZfL-O3vc2QDF7cMZkH2XlPpt97nMH3rIA31w1VkKoUNDXgvgmNZMJV4lfYbKQKd-LK7PGIRgHIZSvAVe8tINBt8YGCs-dHpqgNmjjmllsAdcBCCUt8J7XzO_kb9wDep4UyGjI/s2048/IMG_20210206_151135.jpg"
     ]
   }
 ];
@@ -206,11 +183,11 @@ const storeConfig = {
   whatsappNumber: "628998561811",
   address: "Tashfiyah Label Baju - Jl. Sakura Rt. 1 Rw. 14 No. 11 Mantung, Sanggrahan, Grogol, Sukoharjo",
   email: "tokomuslim2@gmail.com",
-  operatingHours: "Senin - Sabtu, 08:00 - 17:00 WIB",
+  operatingHours: "Senin - Sabtu, 08:00 - 21:00 WIB",
   socialMedia: {
     instagram: "https://instagram.com/tokotashfiyah",
     shopee: "https://shopee.co.id/tokotashfiyah",
-    website: "https://tokomuslimin2.blogspot.com/"
+    website: "https://www.tokotashfiyah.com"
   }
 };
 
@@ -302,7 +279,6 @@ function renderProducts() {
         <div class="product-info">
           <div class="product-category">${product.category}</div>
           <h3 class="product-name">${product.name}</h3>
-          <p class="product-desc">${product.description}</p>
           <div class="product-price-row">
             <div class="product-price">${formatPrice(product.price)}</div>
             ${oldPriceHTML}
@@ -361,7 +337,7 @@ function initTouchSwipe() {
 }
 
 function orderWhatsAppDirect(productId) { viewProduct(productId); }
-function openWhatsApp() { window.open(`https://wa.me/${storeConfig.whatsappNumber}?text=${encodeURIComponent("Assalamu'alaikum Toko Tashfiyah, saya ingin bertanya.")}`, '_blank'); }
+function openWhatsApp() { window.open(`https://wa.me/${storeConfig.whatsappNumber}?text=${encodeURIComponent("Assalamu'alaikum Toko Tashfiyah, saya mau tanya-tanya nih kak.")}`, '_blank'); }
 
 // ── PRODUCT MODAL LOGIC ──
 let currentProduct = null;
@@ -426,20 +402,19 @@ function viewProduct(productId) {
   const waBtn = document.getElementById('modal-wa-btn');
 
   addCartBtn.onclick = () => {
-    if (finalCalculatedPrice === 0) { showToast("Kombinasi/Stok tidak tersedia!"); return; }
+    if (finalCalculatedPrice === 0) { showToast("Varian ini sedang tidak tersedia."); return; }
     let fullVariantName = buildFullVariantName();
     addToCart(product.id, currentQuantity, fullVariantName, finalCalculatedPrice);
     closeModal();
-    showToast(`Ditambahkan: ${product.name} (${fullVariantName})`);
+    showToast(`Ditambahkan ke keranjang!`);
   };
 
   waBtn.onclick = () => {
-    if (finalCalculatedPrice === 0) { showToast("Kombinasi/Stok tidak tersedia!"); return; }
+    if (finalCalculatedPrice === 0) { showToast("Varian ini sedang tidak tersedia."); return; }
     let fullVariantName = buildFullVariantName();
     orderWhatsAppModal(product, currentQuantity, fullVariantName, finalCalculatedPrice);
   };
 
-  // Mencegah scroll body belakang saat modal terbuka
   document.body.classList.add('modal-open');
   document.getElementById('product-modal').classList.add('active');
 }
@@ -596,20 +571,20 @@ function renderCartItems() {
 function orderWhatsAppModal(product, qty, fullVariantName, variantPrice) {
   const total = variantPrice * qty;
   let varianText = (fullVariantName && fullVariantName !== 'Satu Ukuran') ? `(${fullVariantName})` : '';
-  const message = `Assalamu'alaikum, Toko Tashfiyah.\nSaya pesen langsung:\n\n=== ORDER ===\n1. ${product.name} ${varianText}\n   ${qty} x ${formatPrice(variantPrice)} = ${formatPrice(total)}\n\nTOTAL: *${formatPrice(total)}*\n\nAlamat pengiriman:\n...\n\nSekalian total ongkir ya`;
+  const message = `Assalamu'alaikum, Toko Tashfiyah.\nSaya mau order ini kak:\n\n=== ORDER DETAIL ===\n1. ${product.name} ${varianText}\n   ${qty} x ${formatPrice(variantPrice)} = ${formatPrice(total)}\n\nTOTAL: *${formatPrice(total)}*\n\nAlamat pengiriman:\n(Tulis disini)\n\nApakah stoknya aman kak?`;
   window.open(`https://wa.me/${storeConfig.whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
 }
 
 function checkoutWhatsApp() {
   if (cart.length === 0) { showToast("Keranjang kosong!"); return; }
-  let message = `Assalamu'alaikum, Toko Tashfiyah.\nSaya konfirmasi pesanan:\n\n=== ORDER ===\n`;
+  let message = `Assalamu'alaikum, Toko Tashfiyah.\nSaya mau checkout pesanan saya nih kak:\n\n=== CART DETAIL ===\n`;
   let total = 0;
   cart.forEach((item, index) => {
     const itemTotal = item.price * item.quantity; total += itemTotal;
     let varianText = (item.variant && item.variant !== 'Satu Ukuran') ? `[${item.variant}]` : '';
     message += `${index + 1}. ${item.name} ${varianText}\n    ${item.quantity} x ${formatPrice(item.price)} = ${formatPrice(itemTotal)}\n`;
   });
-  message += `\nTOTAL: *${formatPrice(total)}*\n\nAlamat pengiriman:\n...\n\nMohon info ongkir dan nomor rekening ya. Terima kasih.`;
+  message += `\nTOTAL PESANAN: *${formatPrice(total)}*\n\nAlamat pengiriman:\n(Tulis alamat lengkap disini)\n\nMohon info ongkir dan nomor rekening ya. Terima kasih.`;
   window.open(`https://wa.me/${storeConfig.whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
 }
 
@@ -622,13 +597,10 @@ function showToast(message) {
   setTimeout(() => { toast.classList.remove('show'); setTimeout(() => toast.remove(), 400); }, 3000);
 }
 
-// 1. Fungsi Render Bank (Sudah diperbaiki dari 'undefined')
 function renderPaymentMethods() {
   const grid = document.getElementById('payment-grid'); if (!grid) return;
   grid.innerHTML = paymentMethods.map((m, i) => {
-    // Cek apakah deskripsi ada, jika tidak ada (kosong/dihapus), jangan print elemen <p> nya.
     const descHtml = m.description ? `<p>${m.description}</p>` : '';
-    
     return `<div class="payment-card reveal delay-${(i % 4) + 1}">
       <div class="payment-icon">${m.icon}</div>
       <h3>${m.name}</h3>
@@ -640,72 +612,29 @@ function renderPaymentMethods() {
   }).join('');
 }
 
-// 2. Fungsi Copy yang Baru (Anti Gagal di HP/PC)
 function copyToClipboard(text) {
   if (navigator.clipboard && window.isSecureContext) {
-    navigator.clipboard.writeText(text)
-      .then(() => showToast('Nomor berhasil disalin!'))
-      .catch(err => {
-        console.error('Gagal menyalin dengan clipboard API:', err);
-        fallbackCopyTextToClipboard(text);
-      });
-  } else {
-    fallbackCopyTextToClipboard(text);
-  }
+    navigator.clipboard.writeText(text).then(() => showToast('Nomor berhasil disalin!')).catch(err => { fallbackCopyTextToClipboard(text); });
+  } else { fallbackCopyTextToClipboard(text); }
 }
 
-// 3. Fallback Copy untuk browser lama atau koneksi HTTP
 function fallbackCopyTextToClipboard(text) {
-  var textArea = document.createElement("textarea");
-  textArea.value = text;
-  
-  // Hindari scroll paksa ke bawah saat textarea ditambahkan
-  textArea.style.top = "0";
-  textArea.style.left = "0";
-  textArea.style.position = "fixed";
-  textArea.style.opacity = "0";
-
-  document.body.appendChild(textArea);
-  textArea.focus();
-  textArea.select();
-
-  try {
-    var successful = document.execCommand('copy');
-    if(successful) {
-      showToast('Nomor berhasil disalin!');
-    } else {
-      showToast('Gagal menyalin. Silakan salin manual.');
-    }
-  } catch (err) {
-    console.error('Fallback: Oops, tidak bisa copy', err);
-    showToast('Gagal menyalin. Silakan salin manual.');
-  }
-
+  var textArea = document.createElement("textarea"); textArea.value = text;
+  textArea.style.top = "0"; textArea.style.left = "0"; textArea.style.position = "fixed"; textArea.style.opacity = "0";
+  document.body.appendChild(textArea); textArea.focus(); textArea.select();
+  try { var successful = document.execCommand('copy'); if(successful) { showToast('Nomor berhasil disalin!'); } else { showToast('Gagal menyalin.'); } } catch (err) { showToast('Gagal menyalin.'); }
   document.body.removeChild(textArea);
 }
 
-// Lanjutan kode renderContact, renderTrustBuilder, renderFooter... (TETAP SAMA SEPERTI SEBELUMNYA)
-function renderContact() {
-  const c = document.getElementById('contact-info');
-  // dst...
-   
 function renderContact() {
   const c = document.getElementById('contact-info');
   const mapsLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(storeConfig.address)}`;
-  
   if (c) c.innerHTML = `
     <h3>${storeConfig.name}</h3>
-    <div class="contact-item">
-      <div class="contact-item-icon">📍</div>
-      <div class="contact-item-text">
-        <h4>Alamat</h4>
-        <p><a href="${mapsLink}" target="_blank" style="color: var(--primary); text-decoration: underline; font-weight: 500;">${storeConfig.address}</a></p>
-      </div>
-    </div>
+    <div class="contact-item"><div class="contact-item-icon">📍</div><div class="contact-item-text"><h4>Alamat</h4><p><a href="${mapsLink}" target="_blank" style="color: var(--primary); text-decoration: underline; font-weight: 500;">${storeConfig.address}</a></p></div></div>
     <div class="contact-item"><div class="contact-item-icon">📧</div><div class="contact-item-text"><h4>Email</h4><p>${storeConfig.email}</p></div></div>
     <div class="contact-item"><div class="contact-item-icon">📞</div><div class="contact-item-text"><h4>WhatsApp</h4><p>+${storeConfig.whatsappNumber}</p></div></div>
   `;
-  
   const s = document.getElementById('social-card');
   if (s) s.innerHTML = `<h3>Pesan Sekarang</h3><p>Kami siap membantu Anda via WhatsApp.</p><button class="wa-direct-btn" onclick="openWhatsApp()">Chat via WA</button><h4 class="social-links-heading">Kunjungi Kami Di</h4><div class="social-links"><a href="${storeConfig.socialMedia.instagram}" target="_blank" class="social-link" title="Instagram">📸</a><a href="${storeConfig.socialMedia.shopee}" target="_blank" class="social-link" title="Shopee">🛍️</a><a href="${storeConfig.socialMedia.website}" target="_blank" class="social-link" title="Website Resmi">🌐</a></div>`;
 }
@@ -728,11 +657,8 @@ function initNavbar() {
   const navLinks = document.getElementById('nav-links');
   
   window.addEventListener('scroll', () => {
-    if(window.scrollY > 50) {
-      headerWrapper.classList.add('scrolled');
-    } else {
-      headerWrapper.classList.remove('scrolled');
-    }
+    if(window.scrollY > 50) { headerWrapper.classList.add('scrolled'); } 
+    else { headerWrapper.classList.remove('scrolled'); }
   });
 
   if (hamburger) hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); navLinks.classList.toggle('open'); });
@@ -750,14 +676,12 @@ function initScrollTop() {
   btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 }
 
-// Global Listener (Agar klik diluar modal/cart menutup pop-up tsb)
 document.addEventListener('click', (e) => { 
   if (e.target.classList.contains('modal-overlay')) closeModal(); 
   if (e.target.classList.contains('cart-overlay')) closeCart(); 
 });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeModal(); closeCart(); } });
 
-// ── APP INIT ──
 document.addEventListener('DOMContentLoaded', () => {
   loadCart();
   renderCategories();
