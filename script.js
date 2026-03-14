@@ -194,10 +194,10 @@ const products = [
 
 // ── PAYMENT DATA ──
 const paymentMethods = [
-  { icon: `<img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Bank_Central_Asia.svg" alt="BCA" style="height: 24px;">`, name: "Bank BCA", description: "Transfer melalui Bank BCA untuk pembayaran yang cepat dan aman.", accountNumber: "7735309650", accountName: "ARIF WIJAYA" },
-  { icon: `<img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Bank_Mandiri_logo_2016.svg" alt="Mandiri" style="height: 24px;">`, name: "Bank Mandiri", description: "Transfer melalui Bank Mandiri untuk kemudahan transaksi Anda.", accountNumber: "9000031825285", accountName: "ARIF WIJAYA" },
-  { icon: `<img src="https://i2.wp.com/www.pikpng.com/pngl/b/342-3425063_svg-logo-bank-bni-png-clipart.png" alt="BNI" style="height: 24px;">`, name: "Bank BNI", description: "Bayar dengan mudah menggunakan Bank BNI.", accountNumber: "0175181167", accountName: "SOLIHAT" },
-  { icon: `<img src="https://upload.wikimedia.org/wikipedia/commons/6/68/BANK_BRI_logo.svg" alt="BRI" style="height: 24px;">`, name: "Bank BRI", description: "Pembayaran praktis melalui Bank BRI.", accountNumber: "0334-01-076871-50-7", accountName: "SOLIHAT" }
+  { icon: `<img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Bank_Central_Asia.svg" alt="BCA" style="height: 24px;">`, name: "Bank BCA", accountNumber: "7735309650", accountName: "ARIF WIJAYA" },
+  { icon: `<img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Bank_Mandiri_logo_2016.svg" alt="Mandiri" style="height: 24px;">`, name: "Bank Mandiri", accountNumber: "9000031825285", accountName: "ARIF WIJAYA" },
+  { icon: `<img src="https://i2.wp.com/www.pikpng.com/pngl/b/342-3425063_svg-logo-bank-bni-png-clipart.png" alt="BNI" style="height: 24px;">`, name: "Bank BNI", accountNumber: "0175181167", accountName: "SOLIHAT" },
+  { icon: `<img src="https://upload.wikimedia.org/wikipedia/commons/6/68/BANK_BRI_logo.svg" alt="BRI" style="height: 24px;">`, name: "Bank BRI", accountNumber: "0334-01-076871-50-7", accountName: "SOLIHAT" }
 ];
 
 // ── STORE CONFIG ──
