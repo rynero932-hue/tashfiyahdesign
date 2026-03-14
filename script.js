@@ -185,9 +185,9 @@ const storeConfig = {
   email: "tokomuslim2@gmail.com",
   operatingHours: "Senin - Sabtu, 08:00 - 21:00 WIB",
   socialMedia: {
-    instagram: "https://instagram.com/tokotashfiyah",
-    shopee: "https://shopee.co.id/tokotashfiyah",
-    website: "https://www.tokotashfiyah.com"
+    instagram: "https://www.instagram.com/tasfiyahdesign/",
+    shopee: "https://shopee.co.id/tashfiyahdesign",
+    website: "https://tokomuslimin2.blogspot.com/"
   }
 };
 
