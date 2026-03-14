@@ -206,11 +206,11 @@ const storeConfig = {
   whatsappNumber: "628998561811",
   address: "Tashfiyah Label Baju - Jl. Sakura Rt. 1 Rw. 14 No. 11 Mantung, Sanggrahan, Grogol, Sukoharjo",
   email: "tokomuslim2@gmail.com",
-  operatingHours: "Senin - Sabtu, 08:00 - 21:00 WIB",
+  operatingHours: "Senin - Sabtu, 08:00 - 17:00 WIB",
   socialMedia: {
     instagram: "https://instagram.com/tokotashfiyah",
     shopee: "https://shopee.co.id/tokotashfiyah",
-    website: "https://www.tokotashfiyah.com"
+    website: "https://tokomuslimin2.blogspot.com/"
   }
 };
 
