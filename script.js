@@ -622,6 +622,7 @@ function showToast(message) {
   setTimeout(() => { toast.classList.remove('show'); setTimeout(() => toast.remove(), 400); }, 3000);
 }
 
+// 1. Fungsi Render Bank (Sudah diperbaiki dari 'undefined')
 function renderPaymentMethods() {
   const grid = document.getElementById('payment-grid'); if (!grid) return;
   grid.innerHTML = paymentMethods.map((m, i) => {
@@ -639,6 +640,55 @@ function renderPaymentMethods() {
   }).join('');
 }
 
+// 2. Fungsi Copy yang Baru (Anti Gagal di HP/PC)
+function copyToClipboard(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text)
+      .then(() => showToast('Nomor berhasil disalin!'))
+      .catch(err => {
+        console.error('Gagal menyalin dengan clipboard API:', err);
+        fallbackCopyTextToClipboard(text);
+      });
+  } else {
+    fallbackCopyTextToClipboard(text);
+  }
+}
+
+// 3. Fallback Copy untuk browser lama atau koneksi HTTP
+function fallbackCopyTextToClipboard(text) {
+  var textArea = document.createElement("textarea");
+  textArea.value = text;
+  
+  // Hindari scroll paksa ke bawah saat textarea ditambahkan
+  textArea.style.top = "0";
+  textArea.style.left = "0";
+  textArea.style.position = "fixed";
+  textArea.style.opacity = "0";
+
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+
+  try {
+    var successful = document.execCommand('copy');
+    if(successful) {
+      showToast('Nomor berhasil disalin!');
+    } else {
+      showToast('Gagal menyalin. Silakan salin manual.');
+    }
+  } catch (err) {
+    console.error('Fallback: Oops, tidak bisa copy', err);
+    showToast('Gagal menyalin. Silakan salin manual.');
+  }
+
+  document.body.removeChild(textArea);
+}
+
+// Lanjutan kode renderContact, renderTrustBuilder, renderFooter... (TETAP SAMA SEPERTI SEBELUMNYA)
+function renderContact() {
+  const c = document.getElementById('contact-info');
+  // dst...
+   
 function renderContact() {
   const c = document.getElementById('contact-info');
   const mapsLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(storeConfig.address)}`;
