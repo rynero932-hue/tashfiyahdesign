@@ -304,7 +304,8 @@ function renderProducts() {
           <h3 class="product-name">${product.name}</h3>
           <p class="product-desc">${product.description}</p>
           <div class="product-price-row">
-            <div class="product-price">${formatPrice(product.price)}${oldPriceHTML}</div>
+            <div class="product-price">${formatPrice(product.price)}</div>
+            ${oldPriceHTML}
           </div>
           <div class="product-actions">
             <button class="btn btn-whatsapp btn-sm" onclick="orderWhatsAppDirect(${product.id})">Beli Langsung</button>
