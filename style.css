@@ -378,9 +378,6 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
 }
 
 @media (max-width: 480px) {
-  .trust-grid, .payment-grid { grid-template-columns: 1fr; }
-  /* Pada layar super kecil (HP lawas), produk kembali 1 kolom agar gambar tidak pecah */
-  .products-grid { grid-template-columns: 1fr; } 
   .hero h1 { font-size: 2rem; line-height: 1.2;}
   .hero-buttons { flex-direction: column; }
   .hero-buttons .btn { width: 100%; }
