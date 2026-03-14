@@ -623,9 +623,20 @@ function showToast(message) {
 
 function renderPaymentMethods() {
   const grid = document.getElementById('payment-grid'); if (!grid) return;
-  grid.innerHTML = paymentMethods.map((m, i) => `<div class="payment-card reveal delay-${(i % 4) + 1}"><div class="payment-icon">${m.icon}</div><h3>${m.name}</h3><p>${m.description}</p><div class="payment-details"><div class="detail-label">Nomor Rekening</div><div class="detail-value">${m.accountNumber}</div></div><div class="payment-details"><div class="detail-label">Atas Nama</div><div class="detail-value">${m.accountName}</div></div><button class="copy-btn" onclick="copyToClipboard('${m.accountNumber}')">📋 Salin Rekening</button></div>`).join('');
+  grid.innerHTML = paymentMethods.map((m, i) => {
+    // Cek apakah deskripsi ada, jika tidak ada (kosong/dihapus), jangan print elemen <p> nya.
+    const descHtml = m.description ? `<p>${m.description}</p>` : '';
+    
+    return `<div class="payment-card reveal delay-${(i % 4) + 1}">
+      <div class="payment-icon">${m.icon}</div>
+      <h3>${m.name}</h3>
+      ${descHtml}
+      <div class="payment-details"><div class="detail-label">Nomor Rekening</div><div class="detail-value">${m.accountNumber}</div></div>
+      <div class="payment-details"><div class="detail-label">Atas Nama</div><div class="detail-value">${m.accountName}</div></div>
+      <button class="copy-btn" onclick="copyToClipboard('${m.accountNumber}')">📋 Salin Rekening</button>
+    </div>`;
+  }).join('');
 }
-function copyToClipboard(text) { navigator.clipboard.writeText(text).then(() => showToast('Disalin!')).catch(() => { const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); showToast('Disalin!'); }); }
 
 function renderContact() {
   const c = document.getElementById('contact-info');
