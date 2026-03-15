@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Label Pita Katun Polos",
+    "category": "Pita Katun",
+    "price": 92000,
+    "oldPrice": 95000,
+    "spec": "Berat: 290 gr/Roll | Panjang: ± 100 Meter",
+    "description": "Label katun polos berkualitas, bahan lembut, eco-friendly, dan tersedia dalam ukuran 1,3cm sampai 5cm. Setiap roll isi 100 meter, sangat hemat untuk stok produksi.",
+    "badge": "Terlaris",
+    "colors": ["Label Katun Cream", "Label Katun Hitam", "Label Katun Putih"],
+    "sizes": ["1.3cm", "1.5cm", "2cm", "2.5cm", "3cm", "5cm"],
+    "combinations": {
+      "Label Katun Cream|1.3cm": 92000, "Label Katun Cream|1.5cm": 110000,
+      "Label Katun Cream|2cm": 134000, "Label Katun Cream|2.5cm": 159000,
+      "Label Katun Cream|3cm": 199000, "Label Katun Cream|5cm": 250000,
+      "Label Katun Hitam|1.3cm": 125000, "Label Katun Hitam|2cm": 169000,
+      "Label Katun Hitam|2.5cm": 220000, "Label Katun Hitam|3cm": 250000,
+      "Label Katun Putih|1.3cm": 95000, "Label Katun Putih|2cm": 165000,
+      "Label Katun Putih|2.5cm": 220000, "Label Katun Putih|3cm": 250000
+    },
+    "images": [
+      "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg27xtDoeJZfL-O3vc2QDF7cMZkH2XlPpt97nMH3rIA31w1VkKoUNDXgvgmNZMJV4lfYbKQKd-LK7PGIRgHIZSvAVe8tINBt8YGCs-dHpqgNmjjmllsAdcBCCUt8J7XzO_kb9wDep4UyGjI/s2048/IMG_20210206_151135.jpg"
+    ]
+  }
+]
