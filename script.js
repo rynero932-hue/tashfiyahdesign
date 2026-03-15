@@ -1,6 +1,6 @@
 /* ============================================
-   TOKO TASHFIYAH - Script
-   Modern Islamic Store E-Commerce (FINAL FIX)
+   TOKO TASHFIYAH - App Script
+   Simple HTML/CSS/JS, No API
    ============================================ */
 
 // ── PRODUCT DATA ──
@@ -9,28 +9,21 @@ const products = [
     id: 1,
     name: "Label Pita Katun Polos",
     category: "Pita Katun",
-    price: 92000, 
+    price: 92000,
     oldPrice: 95000,
     spec: "Berat: 290 gr/Roll | Panjang: ± 100 Meter",
-    description: "Lagi cari label baju yang eco-friendly dan kelihatan mewah? ✨ Gunakan Label Katun Polos Cream kami! Bahannya lembut banget, nggak bikin gatal, dan tersedia lengkap dalam ukuran 1,3cm sampai 5cm. Plus, tiap roll isinya 100 meter lho, jadi jauh lebih hemat buat stok produksi kamu. Bikin brand kamu makin aesthetic sekarang juga! 🏷️.",
+    description: "Label katun polos berkualitas, bahan lembut, eco-friendly, dan tersedia dalam ukuran 1,3cm sampai 5cm. Setiap roll isi 100 meter, sangat hemat untuk stok produksi.",
     badge: "Terlaris",
     colors: ["Label Katun Cream", "Label Katun Hitam", "Label Katun Putih"],
     sizes: ["1.3cm", "1.5cm", "2cm", "2.5cm", "3cm", "5cm"],
     combinations: {
-      "Label Katun Cream|1.3cm": 92000,
-      "Label Katun Cream|1.5cm": 110000,
-      "Label Katun Cream|2cm": 134000,
-      "Label Katun Cream|2.5cm": 159000,
-      "Label Katun Cream|3cm": 199000,
-      "Label Katun Cream|5cm": 250000,
-      "Label Katun Hitam|1.3cm": 125000,
-      "Label Katun Hitam|2cm": 169000,
-      "Label Katun Hitam|2.5cm": 220000,
-      "Label Katun Hitam|3cm": 250000,
-      "Label Katun Putih|1.3cm": 95000,
-      "Label Katun Putih|2cm": 165000,
-      "Label Katun Putih|2.5cm": 220000,
-      "Label Katun Putih|3cm": 250000
+      "Label Katun Cream|1.3cm": 92000, "Label Katun Cream|1.5cm": 110000,
+      "Label Katun Cream|2cm": 134000, "Label Katun Cream|2.5cm": 159000,
+      "Label Katun Cream|3cm": 199000, "Label Katun Cream|5cm": 250000,
+      "Label Katun Hitam|1.3cm": 125000, "Label Katun Hitam|2cm": 169000,
+      "Label Katun Hitam|2.5cm": 220000, "Label Katun Hitam|3cm": 250000,
+      "Label Katun Putih|1.3cm": 95000, "Label Katun Putih|2cm": 165000,
+      "Label Katun Putih|2.5cm": 220000, "Label Katun Putih|3cm": 250000
     },
     images: [
       "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg27xtDoeJZfL-O3vc2QDF7cMZkH2XlPpt97nMH3rIA31w1VkKoUNDXgvgmNZMJV4lfYbKQKd-LK7PGIRgHIZSvAVe8tINBt8YGCs-dHpqgNmjjmllsAdcBCCUt8J7XzO_kb9wDep4UyGjI/s2048/IMG_20210206_151135.jpg",
@@ -44,28 +37,20 @@ const products = [
     id: 2,
     name: "Label Pita Satin Polos",
     category: "Pita Satin",
-    price: 40000,
-    oldPrice: 45000,
+    price: 40000, oldPrice: 45000,
     spec: "Permukaan Mengkilap | Panjang: ± 180 Meter",
-    description: "Setiap roll memiliki panjang kurang lebih 180 meter, menjadikannya pilihan sangat ekonomis bagi pelaku usaha konveksi, jasa pembungkus kado, maupun kerajinan tangan. Pita ini sangat cocok digunakan sebagai bahan label baju, dekorasi hampers, buket bunga, hingga aksesoris rambut. Bahan kuat, tidak mudah terurai, dan warnanya tidak mudah pudar.",
+    description: "Pita satin berkualitas dengan permukaan mengkilap, panjang ±180 meter per roll. Cocok untuk label baju, dekorasi hampers, buket bunga, dan aksesoris rambut.",
     badge: "Promo",
     colors: ["Satin Putih", "Satin Hitam"],
     sizes: ["1.3cm", "2cm", "2.5cm", "3cm", "4cm", "5cm"],
     combinations: {
-      "Satin Putih|1.3cm": 40000,
-      "Satin Putih|2cm": 50000,
-      "Satin Putih|2.5cm": 65000,
-      "Satin Putih|3cm": 75000,
-      "Satin Putih|4cm": 95000,
-      "Satin Putih|5cm": 125000,
-      "Satin Hitam|1.3cm": 45000,
-      "Satin Hitam|2cm": 55000,
-      "Satin Hitam|2.5cm": 70000,
-      "Satin Hitam|3cm": 80000,
-      "Satin Hitam|4cm": 100000
+      "Satin Putih|1.3cm": 40000, "Satin Putih|2cm": 50000, "Satin Putih|2.5cm": 65000,
+      "Satin Putih|3cm": 75000, "Satin Putih|4cm": 95000, "Satin Putih|5cm": 125000,
+      "Satin Hitam|1.3cm": 45000, "Satin Hitam|2cm": 55000, "Satin Hitam|2.5cm": 70000,
+      "Satin Hitam|3cm": 80000, "Satin Hitam|4cm": 100000
     },
     images: [
-      "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhQKfwLbEd_OKSKzYzAGL-gTyDyullb1zDQ9-ZYYeaGrG2ZOQncTz4U2hHWztdlhbgUrnrALndgbjHKnhJ9snxUAuIqFdPYTOQaCCSm3x29T2Fd_fZLjxac2vSBys62z5V-L_4nQ-JWAIepjTo4gUWUKqBKtrkUDbcwJHr8HYOQ0rQMIwkShjSWweGvKIjg/s4000/IMG_20220926_055529.jpg", 
+      "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhQKfwLbEd_OKSKzYzAGL-gTyDyullb1zDQ9-ZYYeaGrG2ZOQncTz4U2hHWztdlhbgUrnrALndgbjHKnhJ9snxUAuIqFdPYTOQaCCSm3x29T2Fd_fZLjxac2vSBys62z5V-L_4nQ-JWAIepjTo4gUWUKqBKtrkUDbcwJHr8HYOQ0rQMIwkShjSWweGvKIjg/s4000/IMG_20220926_055529.jpg",
       "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEibfmikxdPBdHnufWukTBCtKPlYRP6gP03cu0COIm50sO9iVVm5yQIgXwN03b5as3oEmCEr3MKRHAcUOzYdNBw9MZfFc07_bYeazMT9uE5ML8MSRFG6qQrv1-zKz5jCxetY72UfDqZdc3q59cWYPYA8VrGwVCSfSkFEtcbU_n-53SjlHcvLZIwLk370qGi1/s4000/IMG_20220913_154304.jpg",
       "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQNW121-OftcTaMMw_dzEm8zMw0ZzLj6IrPQo7qFBF9UX9CIQRc-ZdzVkyiSnP2Opj_dkYSLBC8sIgIkN9e8L1JeaQR5rN1vVpFXS-m36tWl5IGHTAv_hAMsva84WO_zRY3SkFMdjaGrlvCGgX6cXTGC8C4yBDV6clW2F5yOVwgt3RxpzPn9bweKCU7p4v/s4064/IMG_20250206_092556_557.jpg"
     ]
@@ -74,20 +59,15 @@ const products = [
     id: 3,
     name: "Label Tafeta Polos",
     category: "Tafeta",
-    price: 40000,
-    oldPrice: 45000,
+    price: 40000, oldPrice: 45000,
     spec: "Tekstur Halus | Panjang: ± 180 Meter",
-    description: "Label tafeta berkualitas tinggi dengan tekstur bahan yang khas dan permukaan yang dapat dicetak dengan jelas. Produk ini merupakan pilihan standar industri untuk label pakaian karena sifatnya yang kuat, tahan cuci, dan memiliki daya serap tinta yang baik saat diproses menggunakan printer label atau sablon.",
+    description: "Label tafeta berkualitas tinggi, pilihan standar industri untuk label pakaian. Kuat, tahan cuci, dan daya serap tinta baik untuk printer label atau sablon.",
     badge: "Promo",
     colors: ["Putih"],
     sizes: ["1.3cm", "2cm", "2.5cm", "3cm", "4cm", "5cm"],
     combinations: {
-      "Putih|1.3cm": 40000,
-      "Putih|2cm": 50000,
-      "Putih|2.5cm": 65000,
-      "Putih|3cm": 75000,
-      "Putih|4cm": 95000,
-      "Putih|5cm": 125000,
+      "Putih|1.3cm": 40000, "Putih|2cm": 50000, "Putih|2.5cm": 65000,
+      "Putih|3cm": 75000, "Putih|4cm": 95000, "Putih|5cm": 125000,
     },
     images: [
       "https://blogger.googleusercontent.com/img/a/AVvXsEgkWvPHGbMlFYuclswUn6hJasARuDYWlMVYhS7vyiN6pC8eavmZ8s9iQGA22NEPADA64B13CTpZlIhYfOsF1Q94lu4jG_YhSk9RNR41OwwaSpBJgugfm-GE51Kd1Okr4tOU5dIgYfbPsUEd_g-WDdDoK_FFHY0IOzOTvF8VmojcbbvRN9bvpvl9EKfe7SKU",
@@ -99,18 +79,15 @@ const products = [
     id: 4,
     name: "Karet Elastis YKK",
     category: "Karet Elastis",
-    price: 84000,
-    oldPrice: 90000,
+    price: 84000, oldPrice: 90000,
     spec: "Bahan Nylon | Panjang: ± 30 Meter",
-    description: "Karet elastis kualitas premium dari brand terpercaya YKK yang sudah terjamin kekuatan dan daya tahannya. Produk ini memiliki elastisitas yang stabil, tidak mudah kendor meskipun sudah dicuci berkali-kali, dan sangat nyaman saat diaplikasikan pada pakaian.",
+    description: "Karet elastis premium brand YKK. Elastisitas stabil, tidak mudah kendor meski dicuci berkali-kali, dan sangat nyaman diaplikasikan pada pakaian.",
     badge: "Baru",
     colors: ["Putih Natural"],
     sizes: ["2cm", "2.5cm", "3cm", "3.8cm", "5cm"],
     combinations: {
-      "Putih Natural|2cm": 84000,
-      "Putih Natural|2.5cm": 92000,
-      "Putih Natural|3cm": 98000,
-      "Putih Natural|3.8cm": 145000,
+      "Putih Natural|2cm": 84000, "Putih Natural|2.5cm": 92000,
+      "Putih Natural|3cm": 98000, "Putih Natural|3.8cm": 145000,
       "Putih Natural|5cm": 165000
     },
     images: [
@@ -123,28 +100,20 @@ const products = [
     id: 5,
     name: "Label Katun Sablon",
     category: "Katun Sablon",
-    price: 220000,
-    oldPrice: 250000,
+    price: 220000, oldPrice: 250000,
     spec: "Isi ±1000 pcs | Hasil Rapi & Pekat",
-    description: "Label baju berbahan katun berkualitas yang memberikan kesan natural, eksklusif, dan ramah di kulit. Menggunakan teknik sablon berkualitas tinggi, hasil cetakan logo dan tulisan terlihat tajam, presisi, serta tahan lama.",
+    description: "Label baju berbahan katun dengan sablon berkualitas tinggi. Hasil cetakan tajam, presisi, dan tahan lama. Kesan natural, eksklusif, dan ramah di kulit.",
     badge: "Terlaris",
     colors: ["Cream Sablon", "Hitam Sablon", "Putih Sablon"],
     sizes: ["1.3cm", "1.5cm", "2cm", "2.5cm", "3cm", "5cm"],
     combinations: {
-      "Cream Sablon|1.3cm": 220000,
-      "Cream Sablon|1.5cm": 230000,
-      "Cream Sablon|2cm": 250000,
-      "Cream Sablon|2.5cm": 280000,
-      "Cream Sablon|3cm": 300000,
-      "Cream Sablon|5cm": 350000,
-      "Hitam Sablon|1.3cm": 250000,
-      "Hitam Sablon|2cm": 280000,
-      "Hitam Sablon|2.5cm": 310000,
-      "Hitam Sablon|3cm": 330000,
-      "Putih Sablon|1.3cm": 230000,
-      "Putih Sablon|2cm": 260000,
-      "Putih Sablon|2.5cm": 290000,
-      "Putih Sablon|3cm": 310000
+      "Cream Sablon|1.3cm": 220000, "Cream Sablon|1.5cm": 230000,
+      "Cream Sablon|2cm": 250000, "Cream Sablon|2.5cm": 280000,
+      "Cream Sablon|3cm": 300000, "Cream Sablon|5cm": 350000,
+      "Hitam Sablon|1.3cm": 250000, "Hitam Sablon|2cm": 280000,
+      "Hitam Sablon|2.5cm": 310000, "Hitam Sablon|3cm": 330000,
+      "Putih Sablon|1.3cm": 230000, "Putih Sablon|2cm": 260000,
+      "Putih Sablon|2.5cm": 290000, "Putih Sablon|3cm": 310000
     },
     images: [
       "https://blogger.googleusercontent.com/img/a/AVvXsEgwCGboTLcNgNbsVMN01bxEBAnjmQzs5_IhsPYaGXkL7ycPDZNHJOeecCWqJpbuuNaWxVLceXs909_dpVAlOWu4WpruU9bfSFefO5Xzf79aeVTTyG9SFRihMq_4WG9fmGkL5AIdFV9ydlxI4ZjbhGgmrmMoyjM81j3YPNeXmBgI2xAUBJeFME0aFKAKy_-q",
@@ -156,10 +125,9 @@ const products = [
     id: 6,
     name: "Label Woven / Bordir",
     category: "Label Bordir",
-    price: 400000,
-    oldPrice: 450000,
+    price: 400000, oldPrice: 450000,
     spec: "Isi: ±1100pcs",
-    description: "Tingkatkan nilai brand pakaian Anda dengan label woven bordir berkualitas premium. Kami menyediakan dua jenis pilihan label yaitu Woven Damask dengan tekstur benang yang lebih rapat, halus, dan detail tajam.",
+    description: "Label woven bordir premium. Woven Damask dengan tekstur benang rapat, halus, dan detail tajam. Tingkatkan nilai brand pakaian Anda.",
     badge: null,
     colors: ["2 warna"],
     sizes: ["1.8 x 6cm", "2.5 x 6cm", "3 x 6cm", "3.5 x 6cm", "4 x 6cm"],
@@ -177,18 +145,15 @@ const products = [
     id: 7,
     name: "Custom Cetak Label Baju",
     category: "Jasa Cetak",
-    price: 150000,
-    oldPrice: null,
+    price: 150000, oldPrice: null,
     spec: "Harga Per Roll (Termasuk Pita + Sablon)",
-    description: "Kami juga menerima jasa cetak label baju kustom dengan brand kamu sendiri. Gratis biaya desain. Silakan chat admin untuk konsultasi lebih lanjut.",
+    description: "Jasa cetak label baju kustom dengan brand Anda sendiri. Gratis biaya desain. Chat admin untuk konsultasi.",
     badge: "Promo",
     colors: ["Pita Katun (Hitam)", "Pita Satin (Emas)"],
     sizes: ["Lebar 1.3cm", "Lebar 2cm"],
     combinations: {
-      "Pita Katun (Hitam)|Lebar 1.3cm": 150000,
-      "Pita Katun (Hitam)|Lebar 2cm": 190000,
-      "Pita Satin (Emas)|Lebar 1.3cm": 170000,
-      "Pita Satin (Emas)|Lebar 2cm": 210000
+      "Pita Katun (Hitam)|Lebar 1.3cm": 150000, "Pita Katun (Hitam)|Lebar 2cm": 190000,
+      "Pita Satin (Emas)|Lebar 1.3cm": 170000, "Pita Satin (Emas)|Lebar 2cm": 210000
     },
     images: [
       "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3863Mf6hP6WkncM-fvnUvH1PZENO9FOaH7LJuRXBkfqQcFuih2Vcjwp3mYWFD2EGRzIFxzhNt1XO4RGokenNGmsvXtDsLB2egR8vHXYvaA25yMv-Ut96K0DrVZEYBEfyULWVnSDr0AN0r/s2048/IMG_20201213_164859.jpg",
@@ -198,550 +163,547 @@ const products = [
   }
 ];
 
-// ── PAYMENT DATA ──
 const paymentMethods = [
-  { icon: `<img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Bank_Central_Asia.svg" alt="BCA" style="height: 24px;">`, name: "Bank BCA", accountNumber: "7735309650", accountName: "ARIF WIJAYA" },
-  { icon: `<img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Bank_Mandiri_logo_2016.svg" alt="Mandiri" style="height: 24px;">`, name: "Bank Mandiri", accountNumber: "9000031825285", accountName: "ARIF WIJAYA" },
-  { icon: `<img src="https://i2.wp.com/www.pikpng.com/pngl/b/342-3425063_svg-logo-bank-bni-png-clipart.png" alt="BNI" style="height: 24px;">`, name: "Bank BNI", accountNumber: "0175181167", accountName: "SOLIHAT" },
-  { icon: `<img src="https://upload.wikimedia.org/wikipedia/commons/6/68/BANK_BRI_logo.svg" alt="BRI" style="height: 24px;">`, name: "Bank BRI", accountNumber: "0334-01-076871-50-7", accountName: "SOLIHAT" }
+  { icon: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Bank_Central_Asia.svg", name: "Bank BCA", accountNumber: "7735309650", accountName: "ARIF WIJAYA" },
+  { icon: "https://upload.wikimedia.org/wikipedia/commons/a/ad/Bank_Mandiri_logo_2016.svg", name: "Bank Mandiri", accountNumber: "9000031825285", accountName: "ARIF WIJAYA" },
+  { icon: "https://i2.wp.com/www.pikpng.com/pngl/b/342-3425063_svg-logo-bank-bni-png-clipart.png", name: "Bank BNI", accountNumber: "0175181167", accountName: "SOLIHAT" },
+  { icon: "https://upload.wikimedia.org/wikipedia/commons/6/68/BANK_BRI_logo.svg", name: "Bank BRI", accountNumber: "0334-01-076871-50-7", accountName: "SOLIHAT" }
 ];
 
-// ── STORE CONFIG ──
 const storeConfig = {
   name: "Toko Tashfiyah",
   whatsappNumber: "628998561811",
   address: "Tashfiyah Label Baju - Jl. Sakura Rt. 1 Rw. 14 No. 11 Mantung, Sanggrahan, Grogol, Sukoharjo",
   email: "tokomuslim2@gmail.com",
-  operatingHours: "Senin - Sabtu, 08:00 - 17:00 WIB",
-  socialMedia: {
+  hours: "Senin - Sabtu, 08:00 - 17:00 WIB",
+  social: {
     instagram: "https://instagram.com/tokotashfiyah",
     shopee: "https://shopee.co.id/tokotashfiyah",
     website: "https://tokomuslimin2.blogspot.com/"
   }
 };
 
+const categories = [
+  { name: "Pita Katun", icon: "🎀", filter: "Pita Katun" },
+  { name: "Pita Satin", icon: "✨", filter: "Pita Satin" },
+  { name: "Tafeta", icon: "🏷️", filter: "Tafeta" },
+  { name: "Karet Elastis", icon: "🔗", filter: "Karet Elastis" },
+  { name: "Katun Sablon", icon: "🖨️", filter: "Katun Sablon" },
+  { name: "Label Bordir", icon: "🧵", filter: "Label Bordir" },
+  { name: "Jasa Cetak", icon: "🎨", filter: "Jasa Cetak" },
+  { name: "Semua", icon: "📦", filter: "Semua" }
+];
+
 // ── STATE ──
 let cart = [];
-let currentCategory = 'Semua';
-let visibleProductsCount = 6; 
+let currentFilter = 'Semua';
 let searchQuery = '';
+let visibleCount = 6;
 
-function formatPrice(price) {
+// Modal state
+let currentProduct = null;
+let modalQty = 1;
+let modalSlide = 0;
+let selectedColor = '';
+let selectedSize = '';
+let modalPrice = 0;
+
+// ── HELPERS ──
+function fmt(price) {
   return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(price);
 }
 
-// ── FILTER & SEARCH RENDER ──
-window.renderCategories = function() {
-  const filterContainer = document.getElementById('category-filters');
-  if (!filterContainer) return;
-  const categories = ['Semua', ...new Set(products.map(p => p.category))];
-  filterContainer.innerHTML = categories.map(cat => `
-    <button class="filter-btn ${cat === currentCategory ? 'active' : ''}" onclick="filterProducts('${cat}')">${cat}</button>
+function toast(msg) {
+  const wrap = document.getElementById('toast-wrap');
+  const t = document.createElement('div');
+  t.className = 'toast';
+  t.textContent = '✅ ' + msg;
+  wrap.appendChild(t);
+  setTimeout(() => t.classList.add('show'), 10);
+  setTimeout(() => { t.classList.remove('show'); setTimeout(() => t.remove(), 300); }, 2500);
+}
+
+// ── PAGE NAVIGATION ──
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.toggle('active', t.dataset.page === name));
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+window.showPage = showPage;
+
+// ── CATEGORY GRID (Beranda) ──
+function renderCategories() {
+  const grid = document.getElementById('category-grid');
+  grid.innerHTML = categories.map(c => `
+    <div class="cat-item" onclick="goCategory('${c.filter}')">
+      <div class="cat-icon">${c.icon}</div>
+      <div class="cat-label">${c.name}</div>
+    </div>
   `).join('');
 }
 
-window.filterProducts = function(category) {
-  currentCategory = category;
-  visibleProductsCount = 6; 
-  document.getElementById('search-input').value = ''; 
+window.goCategory = function(filter) {
+  currentFilter = filter;
   searchQuery = '';
-  renderCategories(); 
-  renderProducts();   
+  visibleCount = 6;
+  const si = document.getElementById('search-input');
+  if (si) si.value = '';
+  showPage('katalog');
+  renderFilterPills();
+  renderProducts();
+};
+
+// ── FILTER PILLS (Katalog) ──
+function renderFilterPills() {
+  const wrap = document.getElementById('filter-pills');
+  const cats = ['Semua', ...new Set(products.map(p => p.category))];
+  wrap.innerHTML = cats.map(c => `
+    <button class="pill ${c === currentFilter ? 'active' : ''}" onclick="setFilter('${c}')">${c}</button>
+  `).join('');
 }
 
-window.loadMoreProducts = function() {
-  visibleProductsCount += 6; 
+window.setFilter = function(cat) {
+  currentFilter = cat;
+  visibleCount = 6;
+  renderFilterPills();
   renderProducts();
-}
+};
 
 window.searchProducts = function() {
   searchQuery = document.getElementById('search-input').value.toLowerCase();
-  visibleProductsCount = 6; 
+  visibleCount = 6;
   renderProducts();
+};
+
+window.loadMoreProducts = function() {
+  visibleCount += 6;
+  renderProducts();
+};
+
+// ── PRODUCT CARD RENDER ──
+function buildCard(product, index) {
+  const badge = product.badge ? `<span class="p-badge ${product.badge.toLowerCase()}">${product.badge}</span>` : '';
+  const old = product.oldPrice ? `<div class="p-old">${fmt(product.oldPrice)}</div>` : '';
+
+  return `
+    <div class="p-card" data-id="${product.id}">
+      <div class="p-slider" id="slider-${product.id}">
+        ${badge}
+        <div class="slides" data-idx="0">
+          ${product.images.map(img => `<div class="slide"><img src="${img}" alt="${product.name}" loading="lazy"></div>`).join('')}
+        </div>
+        <button class="slide-nav prev" onclick="cardSlide(${product.id},-1)">‹</button>
+        <button class="slide-nav next" onclick="cardSlide(${product.id},1)">›</button>
+        <div class="p-dots">
+          ${product.images.map((_, i) => `<button class="dot ${i === 0 ? 'active' : ''}" onclick="cardGo(${product.id},${i})"></button>`).join('')}
+        </div>
+      </div>
+      <div class="p-info">
+        <div class="p-cat">${product.category}</div>
+        <div class="p-name">${product.name}</div>
+        <div class="p-price-row">
+          <div class="p-price">${fmt(product.price)}</div>
+          ${old}
+        </div>
+        <div class="p-actions">
+          <button class="btn btn-wa" onclick="openModal(${product.id})">Beli</button>
+          <button class="btn btn-outline-sm" onclick="openModal(${product.id})">Detail</button>
+        </div>
+      </div>
+    </div>
+  `;
 }
 
-// ── PRODUCT GRID RENDER ──
-window.renderProducts = function() {
+function renderProducts() {
   const grid = document.getElementById('products-grid');
-  const loadMoreBtn = document.getElementById('load-more-container');
-  if (!grid) return;
+  const loadWrap = document.getElementById('load-more-wrap');
 
-  let filteredProducts = currentCategory === 'Semua' 
-    ? products 
-    : products.filter(p => p.category === currentCategory);
+  let list = currentFilter === 'Semua' ? products : products.filter(p => p.category === currentFilter);
+  if (searchQuery.trim()) list = list.filter(p => p.name.toLowerCase().includes(searchQuery));
 
-  if (searchQuery.trim() !== '') {
-    filteredProducts = filteredProducts.filter(p => p.name.toLowerCase().includes(searchQuery));
-  }
-
-  if (filteredProducts.length === 0) {
-    grid.innerHTML = `<p style="grid-column: 1/-1; text-align:center; color: #888; font-style:italic; padding: 40px 0;">Maaf, produk tidak ditemukan.</p>`;
-    loadMoreBtn.style.display = 'none';
+  if (list.length === 0) {
+    grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:#888;padding:40px 0;font-style:italic">Produk tidak ditemukan.</p>';
+    loadWrap.style.display = 'none';
     return;
   }
 
-  const productsToShow = filteredProducts.slice(0, visibleProductsCount);
-
-  if (visibleProductsCount >= filteredProducts.length) {
-    loadMoreBtn.style.display = 'none';
-  } else {
-    loadMoreBtn.style.display = 'block';
-  }
-
-  grid.innerHTML = productsToShow.map((product, index) => {
-    const badgeHtml = product.badge ? `<span class="product-badge ${product.badge.toLowerCase().replace(" ", "-")}">${product.badge}</span>` : '';
-    const oldPriceHTML = product.oldPrice ? `<span class="old-price">${formatPrice(product.oldPrice)}</span>` : '';
-
-    return `
-      <div class="product-card fade-in" style="animation-delay: ${(index % 4) * 0.1}s" data-id="${product.id}">
-        <div class="product-slider" id="slider-${product.id}">
-          ${badgeHtml}
-          <div class="slides-wrapper" data-current="0">
-            ${product.images.map(img => `<div class="slide"><img src="${img}" alt="${product.name}" loading="lazy"></div>`).join('')}
-          </div>
-          <button class="slider-btn prev" onclick="slideProduct(${product.id}, -1)">‹</button>
-          <button class="slider-btn next" onclick="slideProduct(${product.id}, 1)">›</button>
-          <div class="slider-dots">
-            ${product.images.map((_, i) => `<button class="dot ${i === 0 ? 'active' : ''}" onclick="goToSlide(${product.id}, ${i})"></button>`).join('')}
-          </div>
-        </div>
-        <div class="product-info">
-          <div class="product-category">${product.category}</div>
-          <h3 class="product-name">${product.name}</h3>
-          <p class="product-desc">${product.description}</p>
-          <div class="product-price-row">
-            <div class="product-price">${formatPrice(product.price)}</div>
-            ${oldPriceHTML}
-          </div>
-          <div class="product-actions">
-            <button class="btn btn-whatsapp btn-sm" onclick="orderWhatsAppDirect(${product.id})">Beli Langsung</button>
-            <button class="btn btn-outline btn-sm" onclick="viewProduct(${product.id})">Pilih Varian</button>
-          </div>
-        </div>
-      </div>
-    `;
-  }).join('');
-
-  initTouchSwipe();
+  const show = list.slice(0, visibleCount);
+  grid.innerHTML = show.map((p, i) => buildCard(p, i)).join('');
+  loadWrap.style.display = visibleCount >= list.length ? 'none' : 'block';
+  initSwipe();
 }
 
-// ── PRODUCT SLIDER LOGIC (KARTU PRODUK) ──
-window.slideProduct = function(productId, direction) {
-  const slider = document.getElementById(`slider-${productId}`);
+function renderFeatured() {
+  const wrap = document.getElementById('featured-products');
+  const featured = products.slice(0, 4);
+  wrap.innerHTML = featured.map((p, i) => buildCard(p, i)).join('');
+}
+
+// ── CARD SLIDER ──
+window.cardSlide = function(id, dir) {
+  const slider = document.getElementById('slider-' + id);
   if (!slider) return;
-  const wrapper = slider.querySelector('.slides-wrapper');
+  const slides = slider.querySelector('.slides');
   const dots = slider.querySelectorAll('.dot');
-  const totalSlides = slider.querySelectorAll('.slide').length;
-  let current = parseInt(wrapper.dataset.current);
+  const total = slider.querySelectorAll('.slide').length;
+  let idx = parseInt(slides.dataset.idx);
+  idx = (idx + dir + total) % total;
+  slides.style.transform = `translateX(-${idx * 100}%)`;
+  slides.dataset.idx = idx;
+  dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+};
 
-  current += direction;
-  if (current < 0) current = totalSlides - 1;
-  if (current >= totalSlides) current = 0;
-
-  wrapper.style.transform = `translateX(-${current * 100}%)`;
-  wrapper.dataset.current = current;
-  dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
-}
-
-window.goToSlide = function(productId, index) {
-  const slider = document.getElementById(`slider-${productId}`);
+window.cardGo = function(id, i) {
+  const slider = document.getElementById('slider-' + id);
   if (!slider) return;
-  const wrapper = slider.querySelector('.slides-wrapper');
+  const slides = slider.querySelector('.slides');
   const dots = slider.querySelectorAll('.dot');
-  wrapper.style.transform = `translateX(-${index * 100}%)`;
-  wrapper.dataset.current = index;
-  dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
-}
+  slides.style.transform = `translateX(-${i * 100}%)`;
+  slides.dataset.idx = i;
+  dots.forEach((d, j) => d.classList.toggle('active', j === i));
+};
 
-function initTouchSwipe() {
-  document.querySelectorAll('.product-slider').forEach(slider => {
-    let startX = 0, endX = 0;
-    const productId = parseInt(slider.id.replace('slider-', ''));
-    slider.addEventListener('touchstart', e => startX = e.touches[0].clientX, { passive: true });
+function initSwipe() {
+  document.querySelectorAll('.p-slider').forEach(slider => {
+    let sx = 0;
+    const id = parseInt(slider.id.replace('slider-', ''));
+    slider.addEventListener('touchstart', e => sx = e.touches[0].clientX, { passive: true });
     slider.addEventListener('touchend', e => {
-      endX = e.changedTouches[0].clientX;
-      const diff = startX - endX;
-      if (Math.abs(diff) > 50) slideProduct(productId, diff > 0 ? 1 : -1);
+      const diff = sx - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) cardSlide(id, diff > 0 ? 1 : -1);
     }, { passive: true });
   });
 }
 
-window.orderWhatsAppDirect = function(productId) { viewProduct(productId); }
-window.openWhatsApp = function() { window.open(`https://wa.me/${storeConfig.whatsappNumber}?text=${encodeURIComponent("Assalamu'alaikum Toko Tashfiyah, saya mau tanya-tanya nih kak.")}`, '_blank'); }
+// ── PRODUCT MODAL ──
+window.openModal = function(id) {
+  const p = products.find(x => x.id === id);
+  if (!p) return;
+  currentProduct = p;
+  modalQty = 1;
+  modalSlide = 0;
+  selectedColor = (p.colors && p.colors.length) ? p.colors[0] : '';
+  selectedSize = (p.sizes && p.sizes.length) ? p.sizes[0] : '';
 
-// ── PRODUCT MODAL LOGIC (POP UP VARIAN) ──
-let currentProduct = null;
-let currentQuantity = 1;
-let currentModalSlide = 0;
+  // Slides
+  document.getElementById('modal-slides').innerHTML = p.images.map(img => `<div class="slide"><img src="${img}" alt="${p.name}"></div>`).join('');
+  document.getElementById('modal-dots').innerHTML = p.images.map((_, i) => `<button class="dot ${i === 0 ? 'active' : ''}" onclick="modalGo(${i})"></button>`).join('');
+  document.getElementById('modal-slides').style.transform = 'translateX(0)';
 
-let selectedColorName = null;
-let selectedSizeName = null;
-let finalCalculatedPrice = 0;
+  // Info
+  document.getElementById('modal-title').textContent = p.name;
+  document.getElementById('modal-spec').textContent = p.spec || '';
+  document.getElementById('modal-desc').textContent = p.description;
+  document.getElementById('modal-qty').textContent = modalQty;
 
-window.viewProduct = function(productId) {
-  const product = products.find(p => p.id === productId);
-  if (!product) return;
+  // Variants
+  const vw = document.getElementById('modal-variants-wrap');
+  vw.innerHTML = (p.colors && p.colors.length) ? `
+    <div class="var-title">Warna/Tipe:</div>
+    <div class="var-list" id="color-list">
+      ${p.colors.map(c => `<button class="var-btn ${c === selectedColor ? 'active' : ''}" onclick="pickColor('${c}')">${c}</button>`).join('')}
+    </div>
+  ` : '';
 
-  currentProduct = product;
-  currentQuantity = 1;
-  currentModalSlide = 0;
-  
-  selectedColorName = (product.colors && product.colors.length > 0) ? product.colors[0] : '';
-  selectedSizeName = (product.sizes && product.sizes.length > 0) ? product.sizes[0] : '';
-  
-  updateModalPriceDisplay();
+  const sw = document.getElementById('modal-sizes-wrap');
+  sw.innerHTML = (p.sizes && p.sizes.length) ? `
+    <div class="var-title">Ukuran:</div>
+    <div class="var-list" id="size-list">
+      ${p.sizes.map(s => `<button class="var-btn ${s === selectedSize ? 'active' : ''}" onclick="pickSize('${s}')">${s}</button>`).join('')}
+    </div>
+  ` : '';
 
-  const slidesWrapper = document.getElementById('modal-slides-wrapper');
-  const dotsWrapper = document.getElementById('modal-slider-dots');
-  if (slidesWrapper && dotsWrapper) {
-    slidesWrapper.innerHTML = product.images.map(img => `<div class="slide"><img src="${img}" alt="${product.name}"></div>`).join('');
-    dotsWrapper.innerHTML = product.images.map((_, i) => `<button class="dot ${i === 0 ? 'active' : ''}" onclick="goToModalSlide(${i})"></button>`).join('');
-    slidesWrapper.style.transform = `translateX(0%)`;
-  }
+  updateModalPrice();
 
-  document.getElementById('modal-title').textContent = product.name;
-  document.getElementById('modal-spec').textContent = product.spec || "";
-  document.getElementById('modal-desc').textContent = product.description;
-  document.getElementById('modal-qty').textContent = currentQuantity;
-
-  const variantsContainer = document.getElementById('modal-variants-container');
-  if (product.colors && product.colors.length > 0) {
-    variantsContainer.innerHTML = `
-      <div class="modal-variants-title">Pilih Warna/Tipe:</div>
-      <div class="modal-variants-list" id="modal-colors-list">
-        ${product.colors.map(c => `
-          <button class="variant-btn ${c === selectedColorName ? 'active' : ''}" onclick="selectColor('${c}')">${c}</button>
-        `).join('')}
-      </div>
-    `;
-  } else { variantsContainer.innerHTML = ''; }
-
-  const sizesContainer = document.getElementById('modal-sizes-container');
-  if (product.sizes && product.sizes.length > 0) {
-    sizesContainer.innerHTML = `
-      <div class="modal-variants-title" style="margin-top:0;">Pilih Ukuran:</div>
-      <div class="modal-variants-list" id="modal-sizes-list">
-        ${product.sizes.map(s => `
-          <button class="variant-btn ${s === selectedSizeName ? 'active' : ''}" onclick="selectSize('${s}')">${s}</button>
-        `).join('')}
-      </div>
-    `;
-  } else { sizesContainer.innerHTML = ''; }
-
-  const addCartBtn = document.getElementById('modal-add-cart-btn');
-  const waBtn = document.getElementById('modal-wa-btn');
-
-  addCartBtn.onclick = () => {
-    if (finalCalculatedPrice === 0) { showToast("Kombinasi/Stok tidak tersedia!"); return; }
-    let fullVariantName = buildFullVariantName();
-    addToCart(product.id, currentQuantity, fullVariantName, finalCalculatedPrice);
+  // Button handlers
+  document.getElementById('modal-cart-btn').onclick = () => {
+    if (!modalPrice) { toast('Kombinasi tidak tersedia!'); return; }
+    addToCart(p.id, modalQty, variantName(), modalPrice);
     closeModal();
-    showToast(`Ditambahkan: ${product.name} (${fullVariantName})`);
+    toast(`${p.name} ditambahkan ke keranjang`);
+  };
+  document.getElementById('modal-wa-btn').onclick = () => {
+    if (!modalPrice) { toast('Kombinasi tidak tersedia!'); return; }
+    waOrder(p, modalQty, variantName(), modalPrice);
   };
 
-  waBtn.onclick = () => {
-    if (finalCalculatedPrice === 0) { showToast("Kombinasi/Stok tidak tersedia!"); return; }
-    let fullVariantName = buildFullVariantName();
-    orderWhatsAppModal(product, currentQuantity, fullVariantName, finalCalculatedPrice);
-  };
-
-  document.body.classList.add('modal-open');
+  document.body.classList.add('lock');
   document.getElementById('product-modal').classList.add('active');
-}
+};
 
-function updateModalPriceDisplay() {
-  const priceDisplay = document.getElementById('modal-price');
-  const addCartBtn = document.getElementById('modal-add-cart-btn');
+function updateModalPrice() {
+  const el = document.getElementById('modal-price');
+  const cartBtn = document.getElementById('modal-cart-btn');
   const waBtn = document.getElementById('modal-wa-btn');
 
   if (currentProduct.combinations) {
-    let comboKey = `${selectedColorName}|${selectedSizeName}`;
-    if(!selectedSizeName && selectedColorName) comboKey = `${selectedColorName}|`; 
-    if(selectedSizeName && !selectedColorName) comboKey = `|${selectedSizeName}`;
-
-    let price = currentProduct.combinations[comboKey];
-
+    const key = `${selectedColor}|${selectedSize}`;
+    const price = currentProduct.combinations[key];
     if (price) {
-      finalCalculatedPrice = price;
-      priceDisplay.textContent = formatPrice(price);
-      priceDisplay.style.color = "var(--primary)";
-      addCartBtn.disabled = false;
-      waBtn.disabled = false;
-      addCartBtn.style.opacity = "1";
-      waBtn.style.opacity = "1";
+      modalPrice = price;
+      el.textContent = fmt(price);
+      el.style.color = 'var(--primary)';
+      cartBtn.disabled = false; waBtn.disabled = false;
+      cartBtn.style.opacity = '1'; waBtn.style.opacity = '1';
     } else {
-      finalCalculatedPrice = 0;
-      priceDisplay.textContent = "Tidak Tersedia";
-      priceDisplay.style.color = "#E74C3C";
-      addCartBtn.disabled = true;
-      waBtn.disabled = true;
-      addCartBtn.style.opacity = "0.5";
-      waBtn.style.opacity = "0.5";
+      modalPrice = 0;
+      el.textContent = 'Tidak Tersedia';
+      el.style.color = '#E74C3C';
+      cartBtn.disabled = true; waBtn.disabled = true;
+      cartBtn.style.opacity = '0.5'; waBtn.style.opacity = '0.5';
     }
   } else {
-    finalCalculatedPrice = currentProduct.price;
-    priceDisplay.textContent = formatPrice(finalCalculatedPrice);
+    modalPrice = currentProduct.price;
+    el.textContent = fmt(modalPrice);
   }
 }
 
-function buildFullVariantName() {
-  if(selectedColorName && selectedSizeName) return `${selectedColorName} - ${selectedSizeName}`;
-  if(selectedColorName) return selectedColorName;
-  if(selectedSizeName) return selectedSizeName;
-  return 'Satu Ukuran';
+function variantName() {
+  if (selectedColor && selectedSize) return `${selectedColor} - ${selectedSize}`;
+  return selectedColor || selectedSize || 'Satu Ukuran';
 }
 
-window.selectColor = function(colorName) {
-  selectedColorName = colorName;
-  updateModalPriceDisplay();
-  const btns = document.querySelectorAll('#modal-colors-list .variant-btn');
-  btns.forEach(btn => btn.classList.toggle('active', btn.textContent.trim() === colorName));
-}
+window.pickColor = function(c) {
+  selectedColor = c;
+  updateModalPrice();
+  document.querySelectorAll('#color-list .var-btn').forEach(b => b.classList.toggle('active', b.textContent.trim() === c));
+};
 
-window.selectSize = function(sizeName) {
-  selectedSizeName = sizeName;
-  updateModalPriceDisplay();
-  const btns = document.querySelectorAll('#modal-sizes-list .variant-btn');
-  btns.forEach(btn => btn.classList.toggle('active', btn.textContent.trim() === sizeName));
-}
+window.pickSize = function(s) {
+  selectedSize = s;
+  updateModalPrice();
+  document.querySelectorAll('#size-list .var-btn').forEach(b => b.classList.toggle('active', b.textContent.trim() === s));
+};
 
-window.slideModal = function(direction) {
+window.slideModal = function(dir) {
   if (!currentProduct) return;
-  const totalSlides = currentProduct.images.length;
-  currentModalSlide += direction;
-  if (currentModalSlide < 0) currentModalSlide = totalSlides - 1;
-  if (currentModalSlide >= totalSlides) currentModalSlide = 0;
-  updateModalSlider();
+  const total = currentProduct.images.length;
+  modalSlide = (modalSlide + dir + total) % total;
+  document.getElementById('modal-slides').style.transform = `translateX(-${modalSlide * 100}%)`;
+  document.querySelectorAll('#modal-dots .dot').forEach((d, i) => d.classList.toggle('active', i === modalSlide));
+};
+
+window.modalGo = function(i) { modalSlide = i; slideModal(0); };
+
+window.closeModal = function() {
+  document.getElementById('product-modal').classList.remove('active');
+  document.body.classList.remove('lock');
+  currentProduct = null;
+};
+
+window.updateQty = function(d) {
+  modalQty = Math.max(1, modalQty + d);
+  document.getElementById('modal-qty').textContent = modalQty;
+};
+
+// ── CART ──
+function loadCart() {
+  const saved = localStorage.getItem('tashfiyah_cart');
+  if (saved) cart = JSON.parse(saved);
+  updateBadge();
 }
 
-window.goToModalSlide = function(index) { currentModalSlide = index; updateModalSlider(); }
-
-function updateModalSlider() {
-  document.getElementById('modal-slides-wrapper').style.transform = `translateX(-${currentModalSlide * 100}%)`;
-  document.querySelectorAll('#modal-slider-dots .dot').forEach((dot, i) => dot.classList.toggle('active', i === currentModalSlide));
+function saveCart() {
+  localStorage.setItem('tashfiyah_cart', JSON.stringify(cart));
+  updateBadge();
 }
 
-window.closeModal = function() { 
-  document.getElementById('product-modal').classList.remove('active'); 
-  document.body.classList.remove('modal-open');
-  currentProduct = null; 
-}
-
-window.updateQuantity = function(change) {
-  currentQuantity += change;
-  if (currentQuantity < 1) currentQuantity = 1;
-  document.getElementById('modal-qty').textContent = currentQuantity;
-}
-
-// ── CART LOGIC (KERANJANG BELANJA) ──
-function loadCart() { const savedCart = localStorage.getItem('tashfiyah_cart'); if (savedCart) cart = JSON.parse(savedCart); updateCartBadge(); }
-function saveCart() { localStorage.setItem('tashfiyah_cart', JSON.stringify(cart)); updateCartBadge(); }
-function updateCartBadge() {
-  const badge = document.querySelector('.cart-count');
-  if (badge) {
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    badge.textContent = totalItems;
-    badge.style.transform = 'scale(1.3)';
-    setTimeout(() => badge.style.transform = 'scale(1)', 200);
+function updateBadge() {
+  const b = document.getElementById('cart-badge');
+  if (b) {
+    const n = cart.reduce((s, i) => s + i.quantity, 0);
+    b.textContent = n;
+    b.style.transform = 'scale(1.3)';
+    setTimeout(() => b.style.transform = 'scale(1)', 200);
   }
 }
 
-window.openCart = function() { renderCartItems(); document.getElementById('cart-panel').classList.add('open'); document.getElementById('cart-overlay').classList.add('active'); document.body.classList.add('modal-open'); }
-window.closeCart = function() { document.getElementById('cart-panel').classList.remove('open'); document.getElementById('cart-overlay').classList.remove('active'); document.body.classList.remove('modal-open'); }
-
-function addToCart(productId, qty, fullVariantName, variantPrice) {
-  const product = products.find(p => p.id === productId);
-  if (!product) return;
-  const existingItem = cart.find(item => item.id === productId && item.variant === fullVariantName);
-  if (existingItem) {
-    existingItem.quantity += qty;
-  } else {
-    cart.push({ id: product.id, name: product.name, price: variantPrice, image: product.images[0], quantity: qty, variant: fullVariantName });
-  }
+function addToCart(id, qty, variant, price) {
+  const p = products.find(x => x.id === id);
+  if (!p) return;
+  const existing = cart.find(i => i.id === id && i.variant === variant);
+  if (existing) { existing.quantity += qty; }
+  else { cart.push({ id: p.id, name: p.name, price, image: p.images[0], quantity: qty, variant }); }
   saveCart();
 }
 
-window.updateCartItemQty = function(index, change) { cart[index].quantity += change; if (cart[index].quantity <= 0) cart.splice(index, 1); saveCart(); renderCartItems(); }
-window.removeFromCart = function(index) { cart.splice(index, 1); saveCart(); renderCartItems(); }
+window.openCart = function() {
+  renderCart();
+  document.getElementById('cart-panel').classList.add('open');
+  document.getElementById('cart-overlay').classList.add('active');
+  document.body.classList.add('lock');
+};
 
-function renderCartItems() {
-  const container = document.getElementById('cart-items-container');
-  const totalPriceEl = document.getElementById('cart-total-price');
+window.closeCart = function() {
+  document.getElementById('cart-panel').classList.remove('open');
+  document.getElementById('cart-overlay').classList.remove('active');
+  document.body.classList.remove('lock');
+};
 
-  if (cart.length === 0) { container.innerHTML = `<div class="cart-empty">Keranjang Anda masih kosong.</div>`; totalPriceEl.textContent = 'Rp0'; return; }
+window.cartQty = function(i, d) {
+  cart[i].quantity += d;
+  if (cart[i].quantity <= 0) cart.splice(i, 1);
+  saveCart(); renderCart();
+};
 
-  let html = ''; let total = 0;
-  cart.forEach((item, index) => {
-    const itemTotal = item.price * item.quantity; total += itemTotal;
-    const variantHtml = item.variant && item.variant !== 'Satu Ukuran' ? `<span class="cart-item-variant">${item.variant}</span>` : '';
-    html += `
+window.cartRm = function(i) {
+  cart.splice(i, 1);
+  saveCart(); renderCart();
+};
+
+function renderCart() {
+  const body = document.getElementById('cart-body');
+  const totalEl = document.getElementById('cart-total');
+
+  if (!cart.length) {
+    body.innerHTML = '<div class="cart-empty">Keranjang masih kosong.</div>';
+    totalEl.textContent = 'Rp0';
+    return;
+  }
+
+  let total = 0;
+  body.innerHTML = cart.map((item, i) => {
+    const sub = item.price * item.quantity;
+    total += sub;
+    const varHtml = item.variant && item.variant !== 'Satu Ukuran' ? `<div class="cart-item-var">${item.variant}</div>` : '';
+    return `
       <div class="cart-item">
         <img src="${item.image}" alt="${item.name}" class="cart-item-img">
-        <div class="cart-item-info">
-          <div class="cart-item-title">${item.name}</div>
-          ${variantHtml}
-          <div class="cart-item-price">${formatPrice(item.price)}</div>
-          <div class="cart-actions-wrapper">
-            <div class="cart-item-qty-controls">
-              <button class="cart-qty-btn" onclick="updateCartItemQty(${index}, -1)">-</button>
-              <div class="cart-qty-val">${item.quantity}</div>
-              <button class="cart-qty-btn" onclick="updateCartItemQty(${index}, 1)">+</button>
+        <div class="cart-item-body">
+          <div class="cart-item-name">${item.name}</div>
+          ${varHtml}
+          <div class="cart-item-price">${fmt(item.price)}</div>
+          <div class="cart-item-row">
+            <div class="cart-item-qty">
+              <button onclick="cartQty(${i},-1)">−</button>
+              <span>${item.quantity}</span>
+              <button onclick="cartQty(${i},1)">+</button>
             </div>
-            <button class="cart-item-remove" onclick="removeFromCart(${index})">Hapus</button>
+            <button class="cart-rm" onclick="cartRm(${i})">Hapus</button>
           </div>
         </div>
       </div>
     `;
-  });
-  container.innerHTML = html;
-  totalPriceEl.textContent = formatPrice(total);
-}
-
-// ── CHECKOUT WHATSAPP LOGIC ──
-function orderWhatsAppModal(product, qty, fullVariantName, variantPrice) {
-  const total = variantPrice * qty;
-  let varianText = (fullVariantName && fullVariantName !== 'Satu Ukuran') ? `(${fullVariantName})` : '';
-  const message = `Assalamu'alaikum, Toko Tashfiyah.\nSaya mau order ini kak:\n\n=== ORDER DETAIL ===\n1. ${product.name} ${varianText}\n   ${qty} x ${formatPrice(variantPrice)} = ${formatPrice(total)}\n\nTOTAL: *${formatPrice(total)}*\n\nAlamat pengiriman:\n(Tulis disini)\n\nSekalian hitungkan total ongkir ke tempat saya ya min. Terima kasih.`;
-  window.open(`https://wa.me/${storeConfig.whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
-}
-
-window.checkoutWhatsApp = function() {
-  if (cart.length === 0) { showToast("Keranjang kosong!"); return; }
-  let message = `Assalamu'alaikum, Toko Tashfiyah.\nSaya mau checkout pesanan saya nih kak:\n\n=== CART DETAIL ===\n`;
-  let total = 0;
-  cart.forEach((item, index) => {
-    const itemTotal = item.price * item.quantity; total += itemTotal;
-    let varianText = (item.variant && item.variant !== 'Satu Ukuran') ? `[${item.variant}]` : '';
-    message += `${index + 1}. ${item.name} ${varianText}\n    ${item.quantity} x ${formatPrice(item.price)} = ${formatPrice(itemTotal)}\n`;
-  });
-  message += `\nTOTAL PESANAN: *${formatPrice(total)}*\n\nAlamat pengiriman:\n(Tulis alamat lengkap disini)\n\nMohon info ongkir dan nomor rekening ya. Terima kasih.`;
-  window.open(`https://wa.me/${storeConfig.whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
-}
-
-// ── UTILITIES & SECTIONS ──
-window.showToast = function(message) {
-  let container = document.getElementById('toast-container');
-  if (!container) { container = document.createElement('div'); container.id = 'toast-container'; container.className = 'toast-container'; document.body.appendChild(container); }
-  const toast = document.createElement('div'); toast.className = 'toast'; toast.innerHTML = '✅ ' + message; container.appendChild(toast);
-  setTimeout(() => toast.classList.add('show'), 10);
-  setTimeout(() => { toast.classList.remove('show'); setTimeout(() => toast.remove(), 400); }, 3000);
-}
-
-function renderPaymentMethods() {
-  const grid = document.getElementById('payment-grid'); if (!grid) return;
-  grid.innerHTML = paymentMethods.map((m, i) => {
-    const descHtml = m.description ? `<p>${m.description}</p>` : '';
-    return `<div class="payment-card reveal delay-${(i % 4) + 1}">
-      <div class="payment-icon">${m.icon}</div>
-      <h3>${m.name}</h3>
-      ${descHtml}
-      <div class="payment-details"><div class="detail-label">Nomor Rekening</div><div class="detail-value">${m.accountNumber}</div></div>
-      <div class="payment-details"><div class="detail-label">Atas Nama</div><div class="detail-value">${m.accountName}</div></div>
-      <button class="copy-btn" onclick="copyToClipboard('${m.accountNumber}')">📋 Salin Rekening</button>
-    </div>`;
   }).join('');
+  totalEl.textContent = fmt(total);
 }
 
-window.copyToClipboard = function(text) {
+// ── WHATSAPP ──
+window.openWhatsApp = function() {
+  window.open(`https://wa.me/${storeConfig.whatsappNumber}?text=${encodeURIComponent("Assalamu'alaikum Toko Tashfiyah, saya mau tanya-tanya nih kak.")}`, '_blank');
+};
+
+function waOrder(product, qty, variant, price) {
+  const total = price * qty;
+  const v = variant !== 'Satu Ukuran' ? `(${variant})` : '';
+  const msg = `Assalamu'alaikum, Toko Tashfiyah.\nSaya mau order:\n\n=== ORDER ===\n1. ${product.name} ${v}\n   ${qty} x ${fmt(price)} = ${fmt(total)}\n\nTOTAL: *${fmt(total)}*\n\nAlamat:\n(Tulis disini)\n\nMohon hitungkan ongkir ya. Terima kasih.`;
+  window.open(`https://wa.me/${storeConfig.whatsappNumber}?text=${encodeURIComponent(msg)}`, '_blank');
+}
+
+window.checkoutWA = function() {
+  if (!cart.length) { toast('Keranjang kosong!'); return; }
+  let msg = `Assalamu'alaikum, Toko Tashfiyah.\nSaya mau checkout:\n\n=== CART ===\n`;
+  let total = 0;
+  cart.forEach((item, i) => {
+    const sub = item.price * item.quantity;
+    total += sub;
+    const v = item.variant !== 'Satu Ukuran' ? `[${item.variant}]` : '';
+    msg += `${i + 1}. ${item.name} ${v}\n    ${item.quantity} x ${fmt(item.price)} = ${fmt(sub)}\n`;
+  });
+  msg += `\nTOTAL: *${fmt(total)}*\n\nAlamat:\n(Tulis alamat lengkap)\n\nMohon info ongkir dan rekening. Terima kasih.`;
+  window.open(`https://wa.me/${storeConfig.whatsappNumber}?text=${encodeURIComponent(msg)}`, '_blank');
+};
+
+// ── RENDER SECTIONS ──
+function renderPayments() {
+  const list = document.getElementById('payment-list');
+  list.innerHTML = paymentMethods.map(m => `
+    <div class="pay-card">
+      <div class="pay-top">
+        <div class="pay-icon"><img src="${m.icon}" alt="${m.name}"></div>
+        <div class="pay-name">${m.name}</div>
+      </div>
+      <div class="pay-detail">No. Rekening<br><strong>${m.accountNumber}</strong></div>
+      <div class="pay-detail">Atas Nama<br><strong>${m.accountName}</strong></div>
+      <button class="copy-btn" onclick="copyNum('${m.accountNumber}')">📋 Salin Rekening</button>
+    </div>
+  `).join('');
+}
+
+window.copyNum = function(text) {
   if (navigator.clipboard && window.isSecureContext) {
-    navigator.clipboard.writeText(text).then(() => showToast('Nomor berhasil disalin!')).catch(err => { fallbackCopyTextToClipboard(text); });
-  } else { fallbackCopyTextToClipboard(text); }
+    navigator.clipboard.writeText(text).then(() => toast('Nomor disalin!')).catch(() => fallbackCopy(text));
+  } else { fallbackCopy(text); }
+};
+
+function fallbackCopy(text) {
+  const ta = document.createElement('textarea');
+  ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand('copy'); toast('Nomor disalin!'); } catch { toast('Gagal menyalin.'); }
+  document.body.removeChild(ta);
 }
 
-function fallbackCopyTextToClipboard(text) {
-  var textArea = document.createElement("textarea"); textArea.value = text;
-  textArea.style.top = "0"; textArea.style.left = "0"; textArea.style.position = "fixed"; textArea.style.opacity = "0";
-  document.body.appendChild(textArea); textArea.focus(); textArea.select();
-  try { var successful = document.execCommand('copy'); if(successful) { showToast('Nomor berhasil disalin!'); } else { showToast('Gagal menyalin.'); } } catch (err) { showToast('Gagal menyalin.'); }
-  document.body.removeChild(textArea);
+function renderTrust() {
+  const grid = document.getElementById('trust-grid');
+  const items = [
+    { i: '⭐️', t: 'Grade A Quality', d: 'Bahan tidak luntur/brudul.' },
+    { i: '🛒', t: 'Ready Stock', d: 'Pengerjaan cepat & tepat waktu.' },
+    { i: '💰', t: 'Harga Kompetitif', d: 'Cocok untuk konveksi besar.' },
+    { i: '💬', t: 'Konsultasi Gratis', d: 'Bantu pilih spesifikasi via WA.' }
+  ];
+  grid.innerHTML = items.map(x => `
+    <div class="trust-card">
+      <div class="trust-icon">${x.i}</div>
+      <h4>${x.t}</h4>
+      <p>${x.d}</p>
+    </div>
+  `).join('');
 }
 
 function renderContact() {
-  const c = document.getElementById('contact-info');
-  const mapsLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(storeConfig.address)}`;
-  if (c) c.innerHTML = `
-    <h3>${storeConfig.name}</h3>
-    <div class="contact-item"><div class="contact-item-icon">📍</div><div class="contact-item-text"><h4>Alamat</h4><p><a href="${mapsLink}" target="_blank" style="color: var(--primary); text-decoration: underline; font-weight: 500;">${storeConfig.address}</a></p></div></div>
-    <div class="contact-item"><div class="contact-item-icon">📧</div><div class="contact-item-text"><h4>Email</h4><p>${storeConfig.email}</p></div></div>
-    <div class="contact-item"><div class="contact-item-icon">📞</div><div class="contact-item-text"><h4>WhatsApp</h4><p>+${storeConfig.whatsappNumber}</p></div></div>
+  document.getElementById('contact-address').textContent = storeConfig.address;
+  document.getElementById('contact-email').textContent = storeConfig.email;
+  document.getElementById('contact-phone').textContent = '+' + storeConfig.whatsappNumber;
+  document.getElementById('contact-hours').textContent = storeConfig.hours;
+}
+
+function renderSocial() {
+  const grid = document.getElementById('social-grid');
+  grid.innerHTML = `
+    <a href="${storeConfig.social.instagram}" target="_blank" class="social-item">
+      <div class="s-icon ig">📸</div>
+      <div class="s-name">Instagram</div>
+    </a>
+    <a href="${storeConfig.social.shopee}" target="_blank" class="social-item">
+      <div class="s-icon shopee">🛍️</div>
+      <div class="s-name">Shopee</div>
+    </a>
+    <a href="${storeConfig.social.website}" target="_blank" class="social-item">
+      <div class="s-icon web">🌐</div>
+      <div class="s-name">Website</div>
+    </a>
   `;
-  const s = document.getElementById('social-card');
-  if (s) s.innerHTML = `<h3>Pesan Sekarang</h3><p>Kami siap membantu Anda via WhatsApp.</p><button class="wa-direct-btn" onclick="openWhatsApp()">Chat via WA</button><h4 class="social-links-heading">Kunjungi Kami Di</h4><div class="social-links"><a href="${storeConfig.socialMedia.instagram}" target="_blank" class="social-link" title="Instagram">📸</a><a href="${storeConfig.socialMedia.shopee}" target="_blank" class="social-link" title="Shopee">🛍️</a><a href="${storeConfig.socialMedia.website}" target="_blank" class="social-link" title="Website Resmi">🌐</a></div>`;
 }
 
-function renderTrustBuilder() {
-  const grid = document.getElementById('trust-grid'); if (!grid) return;
-  const f = [{i:'⭐️',t:'Grade A Quality',d:'Bahan tidak luntur/brudul.'},{i:'🛒',t:'Ready Stock',d:'Pengerjaan cepat & tepat waktu.'},{i:'💰',t:'Harga Kompetitif',d:'Cocok untuk konveksi besar.'},{i:'💬',t:'Konsultasi Gratis',d:'Bantu pilih spesifikasi ideal via WA.'}];
-  grid.innerHTML = f.map((x,i) => `<div class="trust-card reveal delay-${(i%4)+1}"><div class="trust-icon">${x.i}</div><h3>${x.t}</h3><p>${x.d}</p></div>`).join('');
-}
-
-function renderFooter() {
-  const cl = document.getElementById('footer-contact-list'); if(cl) cl.innerHTML = `<li>📧 ${storeConfig.email}</li><li>📱 +${storeConfig.whatsappNumber}</li><li>🕐 ${storeConfig.operatingHours}</li>`;
-  const socials = document.getElementById('footer-socials');
-  if (socials) { socials.innerHTML = `<a href="${storeConfig.socialMedia.instagram}" target="_blank" class="footer-social-link" title="Instagram">📸</a><a href="${storeConfig.socialMedia.shopee}" target="_blank" class="footer-social-link" title="Shopee">🛍️</a><a href="${storeConfig.socialMedia.website}" target="_blank" class="footer-social-link" title="Website">🌐</a>`; }
-}
-
-function initNavbar() {
-  const headerWrapper = document.getElementById('header-wrapper'); 
-  const hamburger = document.getElementById('hamburger'); 
-  const navLinks = document.getElementById('nav-links');
-  
-  // Scroll effect for header shadow + active nav tracking
-  const sections = document.querySelectorAll('section[id]');
-  const navAnchors = document.querySelectorAll('.nav-links a');
-  
-  window.addEventListener('scroll', () => {
-    // Header shadow
-    if(window.scrollY > 50) { headerWrapper.classList.add('scrolled'); } 
-    else { headerWrapper.classList.remove('scrolled'); }
-    
-    // Active nav link tracking
-    let currentSectionId = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 150;
-      if (window.scrollY >= sectionTop) {
-        currentSectionId = section.getAttribute('id');
-      }
-    });
-    navAnchors.forEach(a => {
-      a.classList.remove('active');
-      if (a.getAttribute('href') === '#' + currentSectionId) {
-        a.classList.add('active');
-      }
-    });
-  });
-
-  if (hamburger) hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); navLinks.classList.toggle('open'); });
-  document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => { hamburger.classList.remove('active'); navLinks.classList.remove('open'); }));
-}
-
-function initRevealAnimations() {
-  const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }), { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
-  document.querySelectorAll('.reveal:not(.visible)').forEach(el => obs.observe(el));
-}
-
-function initScrollTop() {
-  const btn = document.getElementById('scroll-top');
-  window.addEventListener('scroll', () => btn.classList.toggle('visible', window.scrollY > 400));
-  btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-}
-
-document.addEventListener('click', (e) => { 
-  if (e.target.classList.contains('modal-overlay')) closeModal(); 
-  if (e.target.classList.contains('cart-overlay')) closeCart(); 
+// ── GLOBAL EVENTS ──
+document.addEventListener('click', e => {
+  if (e.target.classList.contains('modal-overlay')) closeModal();
 });
-document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeModal(); closeCart(); } });
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { closeModal(); closeCart(); }
+});
 
+// ── INIT ──
 document.addEventListener('DOMContentLoaded', () => {
   loadCart();
   renderCategories();
+  renderFilterPills();
   renderProducts();
-  renderPaymentMethods();
+  renderFeatured();
+  renderPayments();
+  renderTrust();
   renderContact();
-  renderTrustBuilder();
-  renderFooter();
-  initNavbar();
-  initScrollTop();
-  // Delay reveal init to capture dynamically rendered elements
-  setTimeout(initRevealAnimations, 200);
+  renderSocial();
 });
