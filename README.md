@@ -2,9 +2,9 @@
 
 Selamat datang di *repository* **Toko Tashfiyah**! Ini adalah sebuah website E-Commerce *Front-End* statis (Vanilla HTML, CSS, JavaScript) yang didesain secara profesional, ringan, dan dioptimasi khusus untuk melayani penjualan B2B (UMKM, Konveksi) dengan sistem *Checkout* langsung via WhatsApp.
 
-![Toko Tashfiyah Preview](https://via.placeholder.com/1000x500.png?text=Toko+Tashfiyah+Website+Preview) *(Note: Kamu bisa mengganti URL gambar ini dengan screenshot asli websitemu).*
+![Toko Tashfiyah Preview]
 
-🌐 **Live Demo:** [Isi-dengan-URL-Vercel-kamu.vercel.app](https://vercel.com/)
+🌐 **Live Demo:** https://tashfiyahdesign.vercel.app/
 
 ---
 
