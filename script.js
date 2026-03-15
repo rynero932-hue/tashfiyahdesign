@@ -686,9 +686,29 @@ function initNavbar() {
   const hamburger = document.getElementById('hamburger'); 
   const navLinks = document.getElementById('nav-links');
   
+  // Scroll effect for header shadow + active nav tracking
+  const sections = document.querySelectorAll('section[id]');
+  const navAnchors = document.querySelectorAll('.nav-links a');
+  
   window.addEventListener('scroll', () => {
+    // Header shadow
     if(window.scrollY > 50) { headerWrapper.classList.add('scrolled'); } 
     else { headerWrapper.classList.remove('scrolled'); }
+    
+    // Active nav link tracking
+    let currentSectionId = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 150;
+      if (window.scrollY >= sectionTop) {
+        currentSectionId = section.getAttribute('id');
+      }
+    });
+    navAnchors.forEach(a => {
+      a.classList.remove('active');
+      if (a.getAttribute('href') === '#' + currentSectionId) {
+        a.classList.add('active');
+      }
+    });
   });
 
   if (hamburger) hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); navLinks.classList.toggle('open'); });
@@ -697,7 +717,7 @@ function initNavbar() {
 
 function initRevealAnimations() {
   const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }), { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el => obs.observe(el));
 }
 
 function initScrollTop() {
@@ -722,5 +742,6 @@ document.addEventListener('DOMContentLoaded', () => {
   renderFooter();
   initNavbar();
   initScrollTop();
-  setTimeout(initRevealAnimations, 100);
+  // Delay reveal init to capture dynamically rendered elements
+  setTimeout(initRevealAnimations, 200);
 });
