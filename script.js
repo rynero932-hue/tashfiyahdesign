@@ -687,9 +687,19 @@ function renderSocial() {
   `;
 }
 
+// ── SCROLL EVENTS ──
+window.addEventListener('scroll', () => {
+  const scrollBtn = document.getElementById('scroll-top-btn');
+  if (scrollBtn) {
+    if (window.scrollY > 300) scrollBtn.classList.add('show');
+    else scrollBtn.classList.remove('show');
+  }
+});
+
 // ── GLOBAL EVENTS ──
 document.addEventListener('click', e => {
   if (e.target.classList.contains('modal-overlay')) closeModal();
+  if (e.target.classList.contains('cart-overlay')) closeCart();
 });
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') { closeModal(); closeCart(); }
