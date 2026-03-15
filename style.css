@@ -308,29 +308,41 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
 .trust-card p { font-size: 0.75rem; color: var(--text2); }
 
 /* ─── PAYMENT ─── */
-.payment-list { padding: 0 16px; display: flex; flex-direction: column; gap: 12px; }
+.payment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 0;
+}
 .pay-card {
   background: white; border-radius: var(--radius); padding: 20px;
-  box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 12px;
+  box-shadow: var(--shadow); display: flex; flex-direction: column; 
+  align-items: center; text-align: center; gap: 12px;
 }
-.pay-top { display: flex; align-items: center; gap: 14px; }
+.pay-top { display: flex; flex-direction: column; align-items: center; gap: 8px; }
 .pay-icon {
-  width: 48px; height: 48px; border-radius: 12px;
+  width: 52px; height: 52px; border-radius: 14px;
   background: var(--bg-section); display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
 }
-.pay-icon img { height: 20px; }
-.pay-name { font-weight: 700; font-size: 1rem; }
+.pay-icon img { height: 20px; width: auto; max-width: 40px; }
+.pay-name { font-weight: 700; font-size: 0.95rem; }
 .pay-detail {
   background: var(--bg-section); border-radius: 8px; padding: 10px 14px;
-  font-size: 0.8rem; color: var(--text2);
+  font-size: 0.75rem; color: var(--text2); width: 100%;
 }
-.pay-detail strong { font-size: 0.95rem; color: var(--text); display: block; margin-top: 2px; }
+.pay-detail strong { font-size: 0.9rem; color: var(--text); display: block; margin-top: 2px; }
 .copy-btn {
-  padding: 10px; border-radius: 50px; background: var(--primary-glass);
-  color: var(--primary); font-weight: 700; font-size: 0.85rem;
+  padding: 8px; border-radius: 50px; background: var(--primary-glass);
+  color: var(--primary); font-weight: 700; font-size: 0.75rem;
   width: 100%; transition: 0.2s; cursor: pointer; border: none;
 }
 .copy-btn:hover { background: var(--primary); color: white; }
+
+/* Small phones payment grid fix */
+@media (max-width: 400px) {
+  .payment-grid { grid-template-columns: 1fr; }
+}
 
 /* ─── STEPS ─── */
 .steps-list { display: flex; flex-direction: column; gap: 16px; }
@@ -380,10 +392,32 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
 
 /* ─── FOOTER ─── */
 .app-footer {
-  text-align: center; padding: 32px 16px 16px; color: var(--text3);
+  text-align: center; padding: 40px 16px 20px; color: var(--text3);
+  display: flex; flex-direction: column; align-items: center;
 }
-.app-footer p { font-size: 0.9rem; }
-.app-footer .footer-small { font-size: 0.72rem; margin-top: 4px; }
+.footer-logo {
+  font-size: 2rem; margin-bottom: 8px; opacity: 0.4;
+}
+.footer-brand { font-size: 1.1rem; color: var(--text2); }
+.footer-brand strong { color: var(--primary); }
+.footer-tagline { font-size: 0.8rem; margin-bottom: 16px; opacity: 0.7; }
+.footer-divider {
+  width: 60px; height: 1px; background: var(--border); margin-bottom: 16px;
+}
+.app-footer .footer-small { font-size: 0.68rem; margin-top: 2px; line-height: 1.4; opacity: 0.6; }
+
+/* ─── SCROLL TOP ─── */
+.scroll-top-btn {
+  position: fixed; bottom: calc(var(--nav-h) + 16px); left: 16px;
+  width: 44px; height: 44px; border-radius: 12px;
+  background: white; color: var(--primary);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: var(--shadow); z-index: 800;
+  opacity: 0; pointer-events: none; transition: 0.3s;
+  border: 1px solid var(--border);
+}
+.scroll-top-btn.show { opacity: 1; pointer-events: auto; }
+.scroll-top-btn:active { transform: scale(0.9); }
 
 /* ─── MODAL ─── */
 .modal-overlay {
@@ -557,7 +591,7 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   .featured-products { grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .trust-grid { grid-template-columns: repeat(4, 1fr); }
   .hero-text h1 { font-size: 2.4rem; }
-  .payment-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .payment-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
 }
 
 @media (min-width: 768px) {
