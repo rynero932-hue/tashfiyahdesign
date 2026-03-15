@@ -1,38 +1,45 @@
-# 🧵 Toko Tashfiyah — E-Commerce Spesialis Label & Pita
+# Toko Tashfiyah — App-Like E-Commerce Store
 
-Selamat datang di *repository* **Toko Tashfiyah**! Ini adalah sebuah website E-Commerce *Front-End* statis (Vanilla HTML, CSS, JavaScript) yang didesain secara profesional, ringan, dan dioptimasi khusus untuk melayani penjualan B2B (UMKM, Konveksi) dengan sistem *Checkout* langsung via WhatsApp.
-
-![Toko Tashfiyah Preview]
-
-🌐 **Live Demo:** https://tashfiyahdesign.vercel.app/
-
----
+**Toko Tashfiyah** adalah aplikasi web e-commerce modern yang dirancang dengan pendekatan *mobile-first* dan antarmuka layaknya aplikasi seluler (*App-Like Experience*). Spesialis dalam penjualan label baju (pita katun, satin, tafeta), aksesoris konveksi, dan jasa cetak label custom.
 
 ## ✨ Fitur Utama
 
-- ⚡ **Sangat Ringan & Cepat:** Dibangun murni tanpa *framework/library* berat (No React, No jQuery, No Bootstrap).
-- 📱 **Responsif 100%:** Tampilan menyesuaikan secara sempurna di Desktop, Tablet, hingga layar *Smartphone* terkecil (Grid 2 kolom tetap utuh).
-- 🔍 **Live Search & Filter Kategori:** Fitur pencarian instan dan filter kategori tanpa me-reload halaman.
-- 🛒 **Sistem Keranjang Belanja (Cart) Modern:** Dilengkapi fitur ubah kuantitas `( - 1 + )`, simpan di *Local Storage*, dan tidak hilang saat di-refresh.
-- 💬 **WhatsApp Checkout Gateway:** Order diringkas menjadi struk rapi dan langsung dikirimkan ke nomor WhatsApp toko.
-- 🎨 **Matrix Variant System (Harga Dinamis):** Mendukung perhitungan harga persilangan kombinasi Warna & Ukuran. Tombol otomatis berubah harga sesuai pilihan pengguna.
-- 🗂 **Load More Pagination:** Membatasi jumlah awal tampilan produk untuk performa terbaik di HP.
-- 🖼 **Image Slider Support:** Mendukung gesture *touch swipe* pada *card* maupun *pop-up modal*.
+- **📱 App-Like UI/UX**: Navigasi bawah (bottom navigation) untuk akses cepat ke fitur utama.
+- **📦 Katalog Produk Dinamis**: Pencarian dan filter kategori produk yang responsif tanpa reload halaman.
+- **🛒 Keranjang Belanja & Checkout WA**: Integrasi langsung dengan WhatsApp untuk pemesanan yang mudah dan personal.
+- **💳 Sistem Pembayaran Terstruktur**: Instruksi pemesanan yang jelas dan daftar rekening yang rapi dengan fitur salin nomor rekening sekali klik.
+- **📍 Lokasi G-Maps Terintegrasi**: Peta lokasi toko yang akurat dan tombol navigasi langsung.
+- **🚀 Performa Cepat**: Dibangun dengan Vanilla HTML, CSS, dan JavaScript murni tanpa ketergantungan library eksternal yang berat.
+- **⬆️ Fitur Navigasi Tambahan**: Tombol *Scroll to Top* untuk kenyamanan penelusuran halaman yang panjang.
+
+## 🛠️ Teknologi yang Digunakan
+
+- **HTML5**: Struktur semantik yang SEO-friendly.
+- **CSS3 (Vanilla)**: Desain responsif dengan variabel CSS dan animasi halus.
+- **JavaScript (Vanilla)**: Logika aplikasi, pengelolaan keranjang, dan interaksi UI.
+- **Google Fonts**: Menggunakan font *Plus Jakarta Sans* untuk tampilan modern.
+
+## 🚀 Cara Menjalankan
+
+1. Clone repositori ini ke komputer Anda.
+2. Pastikan file `favicon.png`, `index.html`, `style.css`, dan `script.js` berada dalam satu folder.
+3. Buka file `index.html` menggunakan browser pilihan Anda.
+
+## 📂 Struktur File
+
+```text
+├── index.html      # Struktur utama halaman web
+├── style.css       # Seluruh gaya desain dan responsivitas
+├── script.js       # Logika aplikasi dan interaktivitas
+├── favicon.png     # Icon browser kustom
+└── README.md       # Dokumentasi proyek
+```
+
+## 📝 Catatan Pengembang
+
+Aplikasi ini dirancang untuk berjalan secara *client-side* murni, sehingga tidak memerlukan server atau database untuk dijalankan (data produk statis di dalam JS). Sangat cocok untuk bisnis UKM yang menginginkan sistem katalog digital yang cepat dan hemat biaya.
 
 ---
 
-## 🛠 Teknologi yang Digunakan
-
-- **HTML5:** Struktur semantik yang rapi.
-- **CSS3:** Variabel kustom (CSS *Variables*), Flexbox, CSS Grid, serta animasi transisi (*keyframes*).
-- **Vanilla JavaScript (ES6):** Manipulasi DOM dinamis, penyimpanan *Local Storage*, algoritma pencarian/filter, dan Matrix Harga.
-
----
-
-## 🚀 Panduan Instalasi & Penggunaan
-
-Karena proyek ini bersifat statis (Client-side), tidak ada langkah instalasi khusus seperti Node.js atau NPM. 
-
-1. **Clone Repository**
-   ```bash
-   git clone https://github.com/username-kamu/toko-tashfiyah.git
+**Tashfiyah Design — Since 2015**
+*Tingkatkan Nilai Jual Brand Anda dengan Label Premium.*
