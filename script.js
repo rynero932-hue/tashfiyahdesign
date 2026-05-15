@@ -3,8 +3,17 @@
    Simple HTML/CSS/JS, No API
    ============================================ */
 
+// ── ADMIN DATA SYNC ──
+// Load from localStorage if admin has saved data, else use defaults
+function getAdminData(key, defaultVal) {
+  try {
+    const v = localStorage.getItem(key);
+    return v ? JSON.parse(v) : defaultVal;
+  } catch { return defaultVal; }
+}
+
 // ── PRODUCT DATA ──
-const products = [
+let products = [
   {
     id: 1,
     name: "Label Pita Katun Polos",
@@ -163,14 +172,14 @@ const products = [
   }
 ];
 
-const paymentMethods = [
+let paymentMethods = [
   { icon: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Bank_Central_Asia.svg", name: "Bank BCA", accountNumber: "7735309650", accountName: "ARIF WIJAYA" },
   { icon: "https://upload.wikimedia.org/wikipedia/commons/a/ad/Bank_Mandiri_logo_2016.svg", name: "Bank Mandiri", accountNumber: "9000031825285", accountName: "ARIF WIJAYA" },
   { icon: "https://i2.wp.com/www.pikpng.com/pngl/b/342-3425063_svg-logo-bank-bni-png-clipart.png", name: "Bank BNI", accountNumber: "0175181167", accountName: "SOLIHAT" },
   { icon: "https://upload.wikimedia.org/wikipedia/commons/6/68/BANK_BRI_logo.svg", name: "Bank BRI", accountNumber: "0334-01-076871-50-7", accountName: "SOLIHAT" }
 ];
 
-const storeConfig = {
+let storeConfig = {
   name: "Toko Tashfiyah",
   whatsappNumber: "628998561811",
   address: "Tashfiyah Label Baju - Jl. Sakura Rt. 1 Rw. 14 No. 11 Mantung, Sanggrahan, Grogol, Sukoharjo",
@@ -229,6 +238,8 @@ function showPage(name) {
   document.getElementById('page-' + name).classList.add('active');
   document.querySelectorAll('.nav-tab').forEach(t => t.classList.toggle('active', t.dataset.page === name));
   window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Re-observe newly visible elements after transition
+  setTimeout(() => { if (window._observeReveal) window._observeReveal(); }, 50);
 }
 window.showPage = showPage;
 
@@ -707,6 +718,27 @@ document.addEventListener('keydown', e => {
 
 // ── INIT ──
 document.addEventListener('DOMContentLoaded', () => {
+  // Load admin-saved data if available
+  const savedProducts = getAdminData('tashfiyah_products', null);
+  if (savedProducts && savedProducts.length) {
+    products.length = 0;
+    savedProducts.forEach(p => products.push(p));
+  }
+
+  const savedPayments = getAdminData('tashfiyah_payments', null);
+  if (savedPayments && savedPayments.length) {
+    paymentMethods.length = 0;
+    savedPayments.forEach(p => paymentMethods.push(p));
+  }
+
+  const savedStore = getAdminData('tashfiyah_store', null);
+  if (savedStore) {
+    Object.assign(storeConfig, savedStore);
+    // Re-apply name to header
+    const brandName = document.querySelector('.brand-name');
+    if (brandName) brandName.textContent = savedStore.name || storeConfig.name;
+  }
+
   loadCart();
   renderCategories();
   renderFilterPills();
@@ -716,4 +748,47 @@ document.addEventListener('DOMContentLoaded', () => {
   renderTrust();
   renderContact();
   renderSocial();
+
+  // Init scroll reveal
+  initScrollReveal();
+  addRevealClasses();
 });
+
+// ── SCROLL REVEAL ──
+function initScrollReveal() {
+  if (!('IntersectionObserver' in window)) return;
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+
+  function observeReveal() {
+    document.querySelectorAll('.reveal:not(.revealed)').forEach(el => obs.observe(el));
+  }
+  observeReveal();
+
+  // Re-observe after renders
+  window._observeReveal = observeReveal;
+}
+
+function addRevealClasses() {
+  // Add reveal to sections lazily after first paint
+  setTimeout(() => {
+    document.querySelectorAll('.section-block').forEach((el, i) => {
+      el.classList.add('reveal');
+      if (i % 4 === 1) el.classList.add('reveal-delay-1');
+      if (i % 4 === 2) el.classList.add('reveal-delay-2');
+    });
+    document.querySelectorAll('.trust-card').forEach((el, i) => {
+      el.classList.add('reveal', `reveal-delay-${(i % 4) + 1}`);
+    });
+    document.querySelectorAll('.step-item').forEach((el, i) => {
+      el.classList.add('reveal', `reveal-delay-${i + 1}`);
+    });
+    if (window._observeReveal) window._observeReveal();
+  }, 100);
+}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel — Tashfiyah Design</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="admin.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<div id="login-screen" class="login-screen">
+  <div class="login-card">
+    <div class="login-logo">
+      <img src="favicon.png" alt="Tashfiyah Design" width="64">
+    </div>
+    <h1>Admin Panel</h1>
+    <p class="login-sub">Tashfiyah Design — Management</p>
+    <div class="login-form">
+      <div class="field-wrap">
+        <label>Password</label>
+        <input type="password" id="pw-input" placeholder="Masukkan password admin" autocomplete="current-password">
+        <span class="pw-toggle" onclick="togglePw()">👁</span>
+      </div>
+      <div id="login-error" class="login-error"></div>
+      <button class="btn-login" onclick="doLogin()">Masuk</button>
+    </div>
+    <p class="login-hint">Hanya untuk pemilik toko</p>
+  </div>
+</div>
+
+<!-- ADMIN APP -->
+<div id="admin-app" class="admin-app hidden">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <img src="favicon.png" alt="Logo" width="32">
+      <span>Admin Panel</span>
+    </div>
+    <nav class="sidebar-nav">
+      <button class="nav-item active" data-section="dashboard" onclick="showSection('dashboard')">
+        📊 <span>Dashboard</span>
+      </button>
+      <button class="nav-item" data-section="products" onclick="showSection('products')">
+        📦 <span>Produk</span>
+      </button>
+      <button class="nav-item" data-section="payment" onclick="showSection('payment')">
+        💳 <span>Rekening</span>
+      </button>
+      <button class="nav-item" data-section="store" onclick="showSection('store')">
+        ⚙️ <span>Info Toko</span>
+      </button>
+    </nav>
+    <button class="btn-logout" onclick="doLogout()">🚪 Keluar</button>
+  </aside>
+
+  <!-- Mobile header -->
+  <header class="mob-header">
+    <button class="hamburger" onclick="toggleSidebar()">☰</button>
+    <span>Admin Panel</span>
+    <button class="btn-logout-sm" onclick="doLogout()">Keluar</button>
+  </header>
+  <div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+  <!-- Main content -->
+  <main class="admin-main">
+
+    <!-- DASHBOARD -->
+    <section class="admin-section active" id="section-dashboard">
+      <h2>Dashboard</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">📦</div>
+          <div class="stat-val" id="stat-products">0</div>
+          <div class="stat-label">Total Produk</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🏷️</div>
+          <div class="stat-val" id="stat-categories">0</div>
+          <div class="stat-label">Kategori</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">💰</div>
+          <div class="stat-val" id="stat-minprice">-</div>
+          <div class="stat-label">Harga Terendah</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">⭐</div>
+          <div class="stat-val" id="stat-featured">0</div>
+          <div class="stat-label">Produk Unggulan</div>
+        </div>
+      </div>
+      <div class="dash-products">
+        <h3>Semua Produk</h3>
+        <div class="dash-product-list" id="dash-product-list"></div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="admin-section" id="section-products">
+      <div class="section-head">
+        <h2>Kelola Produk</h2>
+        <button class="btn-primary" onclick="openProductForm()">+ Tambah Produk</button>
+      </div>
+
+      <div class="admin-product-list" id="admin-product-list"></div>
+    </section>
+
+    <!-- PAYMENT -->
+    <section class="admin-section" id="section-payment">
+      <div class="section-head">
+        <h2>Rekening Transfer</h2>
+        <button class="btn-primary" onclick="openPaymentForm()">+ Tambah Rekening</button>
+      </div>
+      <div class="payment-list" id="admin-payment-list"></div>
+    </section>
+
+    <!-- STORE -->
+    <section class="admin-section" id="section-store">
+      <h2>Informasi Toko</h2>
+      <div class="store-form">
+        <div class="field-wrap"><label>Nama Toko</label><input type="text" id="sf-name"></div>
+        <div class="field-wrap"><label>Nomor WhatsApp (628xxx)</label><input type="text" id="sf-wa"></div>
+        <div class="field-wrap"><label>Alamat</label><textarea id="sf-address" rows="3"></textarea></div>
+        <div class="field-wrap"><label>Email</label><input type="email" id="sf-email"></div>
+        <div class="field-wrap"><label>Jam Operasional</label><input type="text" id="sf-hours"></div>
+        <div class="field-wrap"><label>Instagram URL</label><input type="text" id="sf-ig"></div>
+        <div class="field-wrap"><label>Shopee URL</label><input type="text" id="sf-shopee"></div>
+        <div class="field-wrap"><label>Website URL</label><input type="text" id="sf-website"></div>
+        <div class="field-wrap"><label>Ganti Password Admin</label><input type="password" id="sf-pw" placeholder="Kosongkan jika tidak ingin ganti"></div>
+        <button class="btn-primary" onclick="saveStore()">💾 Simpan Perubahan</button>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- PRODUCT MODAL FORM -->
+<div class="modal-bg" id="product-modal-bg">
+  <div class="modal-card">
+    <div class="modal-head">
+      <h3 id="product-form-title">Tambah Produk</h3>
+      <button onclick="closeProductForm()">✕</button>
+    </div>
+    <div class="modal-body">
+      <input type="hidden" id="pf-id">
+      <div class="field-wrap"><label>Nama Produk *</label><input type="text" id="pf-name"></div>
+      <div class="field-wrap"><label>Kategori *</label><input type="text" id="pf-category" placeholder="misal: Pita Katun, Satin, dll"></div>
+      <div class="field-wrap"><label>Harga (Rp) *</label><input type="number" id="pf-price"></div>
+      <div class="field-wrap"><label>Harga Coret (Rp)</label><input type="number" id="pf-oldprice" placeholder="Kosong = tidak ada"></div>
+      <div class="field-wrap"><label>Spesifikasi</label><input type="text" id="pf-spec" placeholder="misal: Berat 290gr | 100 Meter"></div>
+      <div class="field-wrap"><label>Deskripsi</label><textarea id="pf-desc" rows="3"></textarea></div>
+      <div class="field-wrap">
+        <label>Badge</label>
+        <select id="pf-badge">
+          <option value="">Tidak Ada</option>
+          <option value="Terlaris">Terlaris</option>
+          <option value="Promo">Promo</option>
+          <option value="Baru">Baru</option>
+        </select>
+      </div>
+      <div class="field-wrap">
+        <label>Varian Warna/Tipe (pisahkan koma)</label>
+        <input type="text" id="pf-colors" placeholder="misal: Putih, Hitam, Cream">
+      </div>
+      <div class="field-wrap">
+        <label>Ukuran (pisahkan koma)</label>
+        <input type="text" id="pf-sizes" placeholder="misal: 1.3cm, 2cm, 3cm">
+      </div>
+      <div class="field-wrap">
+        <label>URL Gambar (satu per baris)</label>
+        <textarea id="pf-images" rows="4" placeholder="https://...&#10;https://..."></textarea>
+      </div>
+      <div class="field-wrap">
+        <label>Kombinasi Harga (format: Warna|Ukuran=Harga, satu per baris)</label>
+        <textarea id="pf-combinations" rows="6" placeholder="Label Katun Cream|1.3cm=92000&#10;Label Katun Cream|2cm=134000"></textarea>
+        <small>Kosongkan jika harga semua kombinasi sama</small>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-secondary" onclick="closeProductForm()">Batal</button>
+        <button class="btn-primary" onclick="saveProduct()">💾 Simpan</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAYMENT MODAL FORM -->
+<div class="modal-bg" id="payment-modal-bg">
+  <div class="modal-card">
+    <div class="modal-head">
+      <h3 id="payment-form-title">Tambah Rekening</h3>
+      <button onclick="closePaymentForm()">✕</button>
+    </div>
+    <div class="modal-body">
+      <input type="hidden" id="pmf-idx">
+      <div class="field-wrap"><label>Nama Bank</label><input type="text" id="pmf-name" placeholder="misal: Bank BCA"></div>
+      <div class="field-wrap"><label>Nomor Rekening</label><input type="text" id="pmf-number"></div>
+      <div class="field-wrap"><label>Atas Nama</label><input type="text" id="pmf-account"></div>
+      <div class="field-wrap"><label>URL Logo Bank</label><input type="text" id="pmf-icon" placeholder="URL gambar logo bank"></div>
+      <div class="modal-footer">
+        <button class="btn-secondary" onclick="closePaymentForm()">Batal</button>
+        <button class="btn-primary" onclick="savePayment()">💾 Simpan</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div id="admin-toast-wrap" class="admin-toast-wrap"></div>
+
+<script src="admin.js"></script>
+</body>
+</html>

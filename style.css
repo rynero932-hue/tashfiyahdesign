@@ -6,18 +6,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap');
 
 :root {
-  --primary: #0A5C36;
-  --primary-light: #12824C;
-  --primary-glass: rgba(10, 92, 54, 0.08);
-  --accent: #B8865B;
-  --accent-light: #D4A574;
-  --bg: #F5F5F5;
+  --primary: #8B0000;
+  --primary-light: #B22222;
+  --primary-glass: rgba(139, 0, 0, 0.08);
+  --accent: #D4AF37;
+  --accent-light: #F0D060;
+  --bg: #FAF8F5;
   --bg-card: #FFFFFF;
-  --bg-section: #F0F2F1;
-  --text: #1E1E1E;
+  --bg-section: #F5F0EB;
+  --text: #1A1A1A;
   --text2: #5A5A5A;
-  --text3: #8C8C8C;
-  --border: #E5E0DA;
+  --text3: #9A9A9A;
+  --border: #EAE4DC;
   --wa: #25D366;
   --wa-dark: #1DA851;
   --radius: 14px;
@@ -53,18 +53,23 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
 }
 .header-inner {
   height: var(--header-h);
-  background: var(--primary);
+  background: linear-gradient(135deg, #6B0000 0%, #8B0000 50%, #A50000 100%);
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 16px;
   color: white;
+  box-shadow: 0 2px 12px rgba(139,0,0,0.3);
 }
 .header-brand { display: flex; align-items: center; gap: 10px; }
+.brand-logo-img {
+  width: 34px; height: 34px; border-radius: 8px;
+  object-fit: cover;
+}
 .brand-icon {
   width: 34px; height: 34px; border-radius: 10px;
   background: rgba(255,255,255,0.2);
   display: flex; align-items: center; justify-content: center; font-size: 1rem;
 }
-.brand-name { font-weight: 800; font-size: 1.15rem; }
+.brand-name { font-weight: 800; font-size: 1.15rem; letter-spacing: -0.3px; }
 .header-actions { display: flex; align-items: center; gap: 12px; }
 .header-cart-btn {
   position: relative; width: 40px; height: 40px; border-radius: 50%;
@@ -75,7 +80,7 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
 .header-cart-btn:hover { background: rgba(255,255,255,0.3); }
 .cart-badge {
   position: absolute; top: -2px; right: -2px;
-  background: var(--accent); color: white;
+  background: var(--accent); color: #2a1a00;
   font-size: 0.65rem; font-weight: 700;
   width: 18px; height: 18px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
@@ -85,9 +90,15 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
 /* ─── RUNNING TEXT ─── */
 .running-bar {
   height: var(--bar-h);
-  background: linear-gradient(135deg, var(--primary-light), var(--primary));
-  color: white; font-size: 0.75rem; font-weight: 600;
+  background: linear-gradient(90deg, #5C0000, #8B0000, #D4AF37, #8B0000, #5C0000);
+  background-size: 200% 100%;
+  animation: bar-shimmer 6s linear infinite;
+  color: #FFE080; font-size: 0.75rem; font-weight: 600;
   display: flex; align-items: center; overflow: hidden;
+}
+@keyframes bar-shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
 }
 .marquee { overflow: hidden; white-space: nowrap; width: 100%; }
 .marquee-content { display: inline-flex; animation: marquee-scroll 26s linear infinite; }
@@ -149,23 +160,23 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
 /* ─── HERO BANNER ─── */
 .hero-banner {
   position: relative; min-height: 280px;
-  background: linear-gradient(165deg, #EBF5EF 0%, #F1EDE8 50%, #F8F6F3 100%);
+  background: linear-gradient(135deg, #4A0000 0%, #8B0000 45%, #6B0000 70%, #2a0a0a 100%);
   display: flex; align-items: center; padding: 32px 20px;
   overflow: hidden;
 }
 .hero-overlay {
   position: absolute; inset: 0;
-  background-image: radial-gradient(circle at 1px 1px, rgba(10,92,54,0.05) 1px, transparent 0);
-  background-size: 32px 32px; pointer-events: none;
+  background: radial-gradient(circle at 75% 40%, rgba(212,175,55,0.18) 0%, transparent 55%);
+  pointer-events: none;
 }
 .hero-text { position: relative; z-index: 2; }
 .hero-basmallah { font-family: 'Amiri', serif; font-size: 1.2rem; color: var(--accent); margin-bottom: 12px; }
-.hero-text h1 { font-size: 1.8rem; font-weight: 800; line-height: 1.2; margin-bottom: 12px; }
+.hero-text h1 { font-size: 1.8rem; font-weight: 800; line-height: 1.2; margin-bottom: 12px; color: white; }
 .hero-text h1 .highlight {
-  background: linear-gradient(135deg, var(--primary), var(--primary-light));
-  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  color: var(--accent);
+  -webkit-text-fill-color: var(--accent);
 }
-.hero-sub { font-size: 0.9rem; color: var(--text2); margin-bottom: 20px; max-width: 400px; }
+.hero-sub { font-size: 0.9rem; color: rgba(255,255,255,0.75); margin-bottom: 20px; max-width: 400px; }
 .hero-btns { display: flex; gap: 10px; flex-wrap: wrap; }
 
 /* ─── BUTTONS ─── */
@@ -174,7 +185,7 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   padding: 12px 24px; border-radius: 50px;
   font-size: 0.9rem; font-weight: 700; transition: all 0.25s; border: none;
 }
-.btn-primary { background: var(--primary); color: white; box-shadow: 0 4px 16px rgba(10,92,54,0.25); }
+.btn-primary { background: var(--primary); color: white; box-shadow: 0 4px 16px rgba(139,0,0,0.3); }
 .btn-primary:hover { background: var(--primary-light); transform: translateY(-2px); }
 .btn-wa { background: linear-gradient(135deg, var(--wa), var(--wa-dark)); color: white; box-shadow: 0 4px 16px rgba(37,211,102,0.3); }
 .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,0.4); }
@@ -632,3 +643,143 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   .p-name { font-size: 0.8rem; }
   .p-price { font-size: 1rem; }
 }
+
+/* ============================================
+   PAGE TRANSITIONS & SCROLL ANIMATIONS
+   ============================================ */
+
+/* Page switching animation */
+.page {
+  animation: none;
+}
+.page.active {
+  animation: page-enter 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Scroll reveal: elements start hidden, JS adds .revealed */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+
+/* Category cards hover lift */
+.cat-item {
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.2s;
+}
+.cat-item:active { transform: scale(0.96); }
+
+/* Product card hover */
+.p-card {
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.25s;
+}
+.p-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(139,0,0,0.12);
+}
+
+/* Trust card hover */
+.trust-card {
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.trust-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(139,0,0,0.10);
+}
+
+/* Bottom nav active indicator animation */
+.nav-tab.active .nav-icon {
+  animation: nav-pop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@keyframes nav-pop {
+  from { transform: scale(0.7); }
+  to   { transform: scale(1); }
+}
+
+/* Section title decorative underline */
+.section-title {
+  position: relative; display: inline-block; margin-bottom: 0;
+}
+.section-title::after {
+  content: '';
+  position: absolute; bottom: -6px; left: 0;
+  width: 40px; height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 2px;
+  transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.section-block:hover .section-title::after {
+  width: 100%;
+}
+
+/* Step item entrance */
+.step-item {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.step-item:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 16px rgba(139,0,0,0.08);
+  border-left: 3px solid var(--primary);
+}
+
+/* Payment card hover */
+.pay-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.pay-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(139,0,0,0.10);
+}
+
+/* Scroll top button gold border */
+.scroll-top-btn {
+  border: 1.5px solid var(--accent) !important;
+  color: var(--primary) !important;
+}
+
+/* Step number gold ring */
+.step-num {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light)) !important;
+  box-shadow: 0 2px 8px rgba(139,0,0,0.25);
+}
+
+/* Category icon gold accent */
+.cat-icon {
+  background: linear-gradient(135deg, var(--primary-glass), rgba(212,175,55,0.08));
+  border: 1.5px solid rgba(212,175,55,0.2);
+  transition: background 0.2s, border-color 0.2s;
+}
+.cat-item:hover .cat-icon {
+  background: linear-gradient(135deg, var(--primary-glass), rgba(212,175,55,0.15));
+  border-color: var(--accent);
+}
+
+/* Gold shimmer on header brand name */
+@keyframes gold-shimmer {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+/* Bottom nav gold active dot */
+.nav-tab.active::before {
+  content: '';
+  position: absolute; top: 2px; left: 50%; transform: translateX(-50%);
+  width: 24px; height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+.nav-tab { position: relative; }
