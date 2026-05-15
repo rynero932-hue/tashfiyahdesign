@@ -70,7 +70,10 @@
 
     <!-- DASHBOARD -->
     <section class="admin-section active" id="section-dashboard">
-      <h2>Dashboard</h2>
+      <div class="section-head" style="margin-bottom:24px">
+        <h2>Dashboard</h2>
+        <button class="btn-secondary" onclick="seedDefaultData()" style="font-size:0.8rem">⬆️ Load Data Awal</button>
+      </div>
       <div class="stats-grid">
         <div class="stat-card">
           <div class="stat-icon">📦</div>
@@ -211,6 +214,6 @@
 <!-- Toast -->
 <div id="admin-toast-wrap" class="admin-toast-wrap"></div>
 
-<script src="admin.js"></script>
+<script type="module" src="admin.js"></script>
 </body>
 </html>

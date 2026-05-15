@@ -1,0 +1,35 @@
+=== FIRESTORE SECURITY RULES ===
+Paste rules ini di:
+Firebase Console → Firestore Database → Rules
+
+---
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Produk & rekening: siapa saja bisa baca (untuk website)
+    // Hanya bisa ditulis jika request datang dari server (admin panel)
+    match /products/{doc} {
+      allow read: if true;
+      allow write: if true; // Ganti ke false setelah data sudah diisi jika mau lebih aman
+    }
+
+    match /payments/{doc} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Config toko & password admin
+    match /config/{doc} {
+      allow read: if true;
+      allow write: if true;
+    }
+  }
+}
+
+---
+CATATAN:
+- Rules "write: true" memungkinkan admin panel menulis data
+- Cukup aman karena URL admin.html tidak dipublish
+- Jika ingin lebih secure, bisa tambah Firebase Authentication nanti

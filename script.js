@@ -1,16 +1,22 @@
 /* ============================================
    TOKO TASHFIYAH - App Script
-   Simple HTML/CSS/JS, No API
+   Firebase Firestore Integration
    ============================================ */
 
-// ── ADMIN DATA SYNC ──
-// Load from localStorage if admin has saved data, else use defaults
-function getAdminData(key, defaultVal) {
-  try {
-    const v = localStorage.getItem(key);
-    return v ? JSON.parse(v) : defaultVal;
-  } catch { return defaultVal; }
-}
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
+import { getFirestore, collection, getDocs, doc, getDoc, orderBy, query } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDN-gIiKxLuEhOs9c_UhdlplvXmGpYgXkE",
+  authDomain: "tashfiyah-design.firebaseapp.com",
+  projectId: "tashfiyah-design",
+  storageBucket: "tashfiyah-design.firebasestorage.app",
+  messagingSenderId: "905685278890",
+  appId: "1:905685278890:web:b847eff22c20fc4adf30d3"
+};
+
+const _app = initializeApp(firebaseConfig);
+const _db  = getFirestore(_app);
 
 // ── PRODUCT DATA ──
 let products = [
@@ -318,7 +324,7 @@ function buildCard(product, index) {
           ${old}
         </div>
         <div class="p-actions">
-          <button class="btn btn-wa" onclick="openModal(${product.id})">Beli</button>
+          <button class="btn btn-primary" onclick="openModal(${product.id})">Beli</button>
           <button class="btn btn-outline-sm" onclick="openModal(${product.id})">Detail</button>
         </div>
       </div>
@@ -717,28 +723,44 @@ document.addEventListener('keydown', e => {
 });
 
 // ── INIT ──
-document.addEventListener('DOMContentLoaded', () => {
-  // Load admin-saved data if available
-  const savedProducts = getAdminData('tashfiyah_products', null);
-  if (savedProducts && savedProducts.length) {
-    products.length = 0;
-    savedProducts.forEach(p => products.push(p));
-  }
+async function initApp() {
+  // 1. Load produk dari Firestore
+  try {
+    let snap;
+    try {
+      const q = query(collection(_db, "products"), orderBy("order", "asc"));
+      snap = await getDocs(q);
+    } catch {
+      snap = await getDocs(collection(_db, "products"));
+    }
+    if (!snap.empty) {
+      products.length = 0;
+      snap.docs.forEach(d => products.push({ id: d.id, firestoreId: d.id, ...d.data() }));
+    }
+  } catch (e) { console.warn("Firestore products error:", e); }
 
-  const savedPayments = getAdminData('tashfiyah_payments', null);
-  if (savedPayments && savedPayments.length) {
-    paymentMethods.length = 0;
-    savedPayments.forEach(p => paymentMethods.push(p));
-  }
+  // 2. Load rekening dari Firestore
+  try {
+    const snap = await getDocs(collection(_db, "payments"));
+    if (!snap.empty) {
+      paymentMethods.length = 0;
+      snap.docs.forEach(d => paymentMethods.push({ ...d.data() }));
+    }
+  } catch (e) { console.warn("Firestore payments error:", e); }
 
-  const savedStore = getAdminData('tashfiyah_store', null);
-  if (savedStore) {
-    Object.assign(storeConfig, savedStore);
-    // Re-apply name to header
-    const brandName = document.querySelector('.brand-name');
-    if (brandName) brandName.textContent = savedStore.name || storeConfig.name;
-  }
+  // 3. Load info toko dari Firestore
+  try {
+    const snap = await getDoc(doc(_db, "config/store"));
+    if (snap.exists()) {
+      const s = snap.data();
+      Object.assign(storeConfig, s);
+      if (s.social) Object.assign(storeConfig.social, s.social);
+      const brandName = document.querySelector('.brand-name');
+      if (brandName && s.name) brandName.textContent = s.name;
+    }
+  } catch (e) { console.warn("Firestore store error:", e); }
 
+  // 4. Render semua
   loadCart();
   renderCategories();
   renderFilterPills();
@@ -749,9 +771,12 @@ document.addEventListener('DOMContentLoaded', () => {
   renderContact();
   renderSocial();
 
-  // Init scroll reveal
   initScrollReveal();
   addRevealClasses();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initApp();
 });
 
 // ── SCROLL REVEAL ──
