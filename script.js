@@ -315,10 +315,10 @@ function buildCard(product, index) {
         <div class="slides" data-idx="0">
           ${product.images.map(img => `<div class="slide"><img src="${img}" alt="${product.name}" loading="lazy"></div>`).join('')}
         </div>
-        <button class="slide-nav prev" onclick="cardSlide(${product.id},-1)">‹</button>
-        <button class="slide-nav next" onclick="cardSlide(${product.id},1)">›</button>
+        <button class="slide-nav prev" onclick="cardSlide('${product.id}',-1)">‹</button>
+        <button class="slide-nav next" onclick="cardSlide('${product.id}',1)">›</button>
         <div class="p-dots">
-          ${product.images.map((_, i) => `<button class="dot ${i === 0 ? 'active' : ''}" onclick="cardGo(${product.id},${i})"></button>`).join('')}
+          ${product.images.map((_, i) => `<button class="dot ${i === 0 ? 'active' : ''}" onclick="cardGo('${product.id}',${i})"></button>`).join('')}
         </div>
       </div>
       <div class="p-info">
@@ -329,8 +329,8 @@ function buildCard(product, index) {
           ${old}
         </div>
         <div class="p-actions">
-          <button class="btn btn-primary" onclick="openModal(${product.id})">Beli</button>
-          <button class="btn btn-outline-sm" onclick="openModal(${product.id})">Detail</button>
+          <button class="btn btn-primary" onclick="openModal('${product.id}')">Beli</button>
+          <button class="btn btn-outline-sm" onclick="openModal('${product.id}')">Detail</button>
         </div>
       </div>
     </div>
@@ -389,7 +389,7 @@ window.cardGo = function(id, i) {
 function initSwipe() {
   document.querySelectorAll('.p-slider').forEach(slider => {
     let sx = 0;
-    const id = parseInt(slider.id.replace('slider-', ''));
+    const id = slider.id.replace('slider-', '');
     slider.addEventListener('touchstart', e => sx = e.touches[0].clientX, { passive: true });
     slider.addEventListener('touchend', e => {
       const diff = sx - e.changedTouches[0].clientX;
@@ -400,7 +400,7 @@ function initSwipe() {
 
 // ── PRODUCT MODAL ──
 window.openModal = function(id) {
-  const p = products.find(x => x.id === id);
+  const p = products.find(x => String(x.id) === String(id));
   if (!p) return;
   currentProduct = p;
   modalQty = 1;
@@ -542,7 +542,7 @@ function updateBadge() {
 }
 
 function addToCart(id, qty, variant, price) {
-  const p = products.find(x => x.id === id);
+  const p = products.find(x => String(x.id) === String(id));
   if (!p) return;
   const existing = cart.find(i => i.id === id && i.variant === variant);
   if (existing) { existing.quantity += qty; }
