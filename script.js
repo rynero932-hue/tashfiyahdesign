@@ -1,22 +1,27 @@
 /* ============================================
    TOKO TASHFIYAH - App Script
-   Firebase Firestore Integration
+   Firebase via CDN global (no module imports)
    ============================================ */
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
-import { getFirestore, collection, getDocs, doc, getDoc, orderBy, query } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js";
+// Firebase globals loaded via <script> tags in index.html
+// window.firebase, firebase.initializeApp, firebase.firestore etc
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDN-gIiKxLuEhOs9c_UhdlplvXmGpYgXkE",
-  authDomain: "tashfiyah-design.firebaseapp.com",
-  projectId: "tashfiyah-design",
-  storageBucket: "tashfiyah-design.firebasestorage.app",
-  messagingSenderId: "905685278890",
-  appId: "1:905685278890:web:b847eff22c20fc4adf30d3"
-};
+let _db = null;
 
-const _app = initializeApp(firebaseConfig);
-const _db  = getFirestore(_app);
+function initFirebase() {
+  try {
+    const firebaseConfig = {
+      apiKey: "AIzaSyDN-gIiKxLuEhOs9c_UhdlplvXmGpYgXkE",
+      authDomain: "tashfiyah-design.firebaseapp.com",
+      projectId: "tashfiyah-design",
+      storageBucket: "tashfiyah-design.firebasestorage.app",
+      messagingSenderId: "905685278890",
+      appId: "1:905685278890:web:b847eff22c20fc4adf30d3"
+    };
+    if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
+    _db = firebase.firestore();
+  } catch(e) { console.warn("Firebase init error:", e); }
+}
 
 // ── PRODUCT DATA ──
 let products = [
@@ -724,41 +729,44 @@ document.addEventListener('keydown', e => {
 
 // ── INIT ──
 async function initApp() {
-  // 1. Load produk dari Firestore
-  try {
-    let snap;
+  initFirebase();
+
+  if (_db) {
+    // 1. Load produk dari Firestore
     try {
-      const q = query(collection(_db, "products"), orderBy("order", "asc"));
-      snap = await getDocs(q);
-    } catch {
-      snap = await getDocs(collection(_db, "products"));
-    }
-    if (!snap.empty) {
-      products.length = 0;
-      snap.docs.forEach(d => products.push({ id: d.id, firestoreId: d.id, ...d.data() }));
-    }
-  } catch (e) { console.warn("Firestore products error:", e); }
+      let snap;
+      try {
+        snap = await _db.collection("products").orderBy("order", "asc").get();
+      } catch {
+        snap = await _db.collection("products").get();
+      }
+      if (!snap.empty) {
+        products.length = 0;
+        snap.docs.forEach(d => products.push({ id: d.id, firestoreId: d.id, ...d.data() }));
+      }
+    } catch (e) { console.warn("Firestore products error:", e); }
 
-  // 2. Load rekening dari Firestore
-  try {
-    const snap = await getDocs(collection(_db, "payments"));
-    if (!snap.empty) {
-      paymentMethods.length = 0;
-      snap.docs.forEach(d => paymentMethods.push({ ...d.data() }));
-    }
-  } catch (e) { console.warn("Firestore payments error:", e); }
+    // 2. Load rekening dari Firestore
+    try {
+      const snap = await _db.collection("payments").get();
+      if (!snap.empty) {
+        paymentMethods.length = 0;
+        snap.docs.forEach(d => paymentMethods.push({ ...d.data() }));
+      }
+    } catch (e) { console.warn("Firestore payments error:", e); }
 
-  // 3. Load info toko dari Firestore
-  try {
-    const snap = await getDoc(doc(_db, "config/store"));
-    if (snap.exists()) {
-      const s = snap.data();
-      Object.assign(storeConfig, s);
-      if (s.social) Object.assign(storeConfig.social, s.social);
-      const brandName = document.querySelector('.brand-name');
-      if (brandName && s.name) brandName.textContent = s.name;
-    }
-  } catch (e) { console.warn("Firestore store error:", e); }
+    // 3. Load info toko dari Firestore
+    try {
+      const snap = await _db.doc("config/store").get();
+      if (snap.exists) {
+        const s = snap.data();
+        Object.assign(storeConfig, s);
+        if (s.social) Object.assign(storeConfig.social, s.social);
+        const brandName = document.querySelector('.brand-name');
+        if (brandName && s.name) brandName.textContent = s.name;
+      }
+    } catch (e) { console.warn("Firestore store error:", e); }
+  }
 
   // 4. Render semua
   loadCart();
