@@ -776,7 +776,13 @@ async function initApp() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  initApp();
+  initApp().then(() => {
+    // Hide loading screen setelah semua data selesai dimuat
+    setTimeout(() => {
+      const ls = document.getElementById('loading-screen');
+      if (ls) ls.classList.add('hidden');
+    }, 600);
+  });
 });
 
 // ── SCROLL REVEAL ──

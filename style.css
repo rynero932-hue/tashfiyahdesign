@@ -792,3 +792,275 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   border-radius: 2px;
 }
 .nav-tab { position: relative; }
+
+/* ============================================
+   LOADING SCREEN
+   ============================================ */
+.loading-screen {
+  position: fixed; inset: 0; z-index: 9999;
+  background: linear-gradient(145deg, #3a0000 0%, #8B0000 45%, #6B0000 75%, #1a0000 100%);
+  display: flex; align-items: center; justify-content: center;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+.loading-screen.hidden {
+  opacity: 0; visibility: hidden; pointer-events: none;
+}
+.loading-logo-wrap {
+  display: flex; flex-direction: column; align-items: center; gap: 20px;
+  animation: loading-fade-in 0.5s ease;
+}
+@keyframes loading-fade-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.loading-logo {
+  width: min(320px, 80vw);
+  filter: drop-shadow(0 8px 32px rgba(212,175,55,0.3));
+  animation: loading-float 2s ease-in-out infinite;
+}
+@keyframes loading-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+.loading-bar-wrap {
+  width: min(260px, 70vw); height: 3px;
+  background: rgba(255,255,255,0.15); border-radius: 4px; overflow: hidden;
+}
+.loading-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), #fff, var(--accent));
+  background-size: 200% 100%;
+  border-radius: 4px;
+  animation: loading-progress 1.8s ease-in-out forwards,
+             loading-shimmer 1.2s linear infinite;
+}
+@keyframes loading-progress {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+@keyframes loading-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+.loading-text {
+  color: rgba(255,255,255,0.6); font-size: 0.8rem;
+  letter-spacing: 0.15em; text-transform: uppercase;
+}
+
+/* ============================================
+   HERO ENHANCEMENTS
+   ============================================ */
+.hero-banner {
+  min-height: 320px;
+  display: flex; align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.hero-visual {
+  display: none; /* hidden on mobile */
+  flex-shrink: 0;
+}
+.hero-logo-img {
+  width: 220px;
+  filter: drop-shadow(0 8px 24px rgba(212,175,55,0.2));
+  animation: hero-float 3s ease-in-out infinite;
+}
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50%       { transform: translateY(-8px) rotate(1deg); }
+}
+.hero-trust-badges {
+  display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px;
+}
+.hero-badge {
+  font-size: 0.72rem; font-weight: 600;
+  background: rgba(212,175,55,0.15);
+  border: 1px solid rgba(212,175,55,0.4);
+  color: var(--accent-light);
+  padding: 4px 10px; border-radius: 50px;
+}
+.btn-hero-wa {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 11px 20px; border-radius: 10px;
+  background: rgba(255,255,255,0.12);
+  border: 1.5px solid rgba(255,255,255,0.3);
+  color: white; font-size: 0.88rem; font-weight: 700;
+  transition: all 0.2s; font-family: inherit;
+}
+.btn-hero-wa:hover {
+  background: rgba(255,255,255,0.22);
+  border-color: rgba(255,255,255,0.5);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   STATS BAR
+   ============================================ */
+.stats-bar {
+  display: flex; align-items: center; justify-content: space-around;
+  background: white;
+  padding: 20px 16px;
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 12px rgba(139,0,0,0.06);
+}
+.stat-item { text-align: center; flex: 1; }
+.stat-num {
+  font-size: 1.6rem; font-weight: 800; color: var(--primary);
+  line-height: 1;
+}
+.stat-num span { font-size: 1.1rem; color: var(--accent); }
+.stat-lbl { font-size: 0.68rem; color: var(--text3); margin-top: 4px; font-weight: 500; }
+.stat-divider {
+  width: 1px; height: 36px;
+  background: var(--border); flex-shrink: 0;
+}
+
+/* ============================================
+   PC / DESKTOP RESPONSIVE (min-width: 768px)
+   ============================================ */
+@media (min-width: 768px) {
+
+  :root {
+    --header-h: 64px;
+    --bar-h: 32px;
+    --nav-h: 0px; /* no bottom nav on PC */
+  }
+
+  body {
+    padding-bottom: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* full-width header/nav stay edge-to-edge via their own positioning */
+  }
+
+  /* Header full width override */
+  .app-header {
+    left: 0; right: 0; width: 100%;
+  }
+  .header-inner {
+    max-width: 1200px; margin: 0 auto;
+    padding: 0 40px; height: var(--header-h);
+  }
+  .brand-name { font-size: 1.3rem; }
+  .brand-logo-img { width: 40px; height: 40px; }
+
+  /* Running bar */
+  .running-bar { font-size: 0.8rem; height: var(--bar-h); }
+
+  /* Bottom nav — hide on PC */
+  .bottom-nav { display: none !important; }
+
+  /* Page padding */
+  .page { padding-bottom: 48px; }
+
+  /* Hero — 2 column on PC */
+  .hero-banner {
+    min-height: 420px;
+    padding: 56px 40px 56px;
+    border-radius: 0 0 24px 24px;
+  }
+  .hero-text { max-width: 560px; }
+  .hero-text h1 { font-size: 2.8rem; line-height: 1.15; }
+  .hero-sub { font-size: 1rem; max-width: 480px; }
+  .hero-visual { display: flex; align-items: center; }
+  .hero-logo-img { width: 280px; }
+
+  /* Stats bar */
+  .stats-bar { padding: 24px 40px; }
+  .stat-num { font-size: 2rem; }
+  .stat-lbl { font-size: 0.75rem; }
+
+  /* Section blocks */
+  .section-block { padding: 32px 40px; }
+  .section-title { font-size: 1.4rem; }
+
+  /* Category grid — more cols on PC */
+  .category-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 16px !important;
+  }
+  .cat-item { padding: 20px 12px !important; }
+  .cat-icon { width: 56px !important; height: 56px !important; font-size: 1.6rem !important; }
+  .cat-name { font-size: 0.85rem !important; }
+
+  /* Featured products — 4 per row on PC */
+  .featured-products {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  /* Products grid — 3 per row on PC */
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 20px !important;
+    padding: 0 40px 32px !important;
+  }
+
+  /* Search bar */
+  .search-bar { margin: 0 40px 16px !important; }
+
+  /* Filter pills */
+  .filter-pills { padding: 0 40px 16px !important; }
+
+  /* Page header */
+  .page-header { padding: 32px 40px 16px !important; }
+
+  /* Trust grid */
+  .trust-grid { grid-template-columns: repeat(4, 1fr) !important; }
+
+  /* Payment grid */
+  .payment-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 16px !important; }
+
+  /* Steps list */
+  .steps-list { max-width: 600px; }
+
+  /* Contact card */
+  .contact-card { margin: 0 40px !important; }
+
+  /* Map */
+  .map-wrap iframe { height: 380px !important; }
+
+  /* Section-block inside pages */
+  #page-payment .section-block,
+  #page-kontak .section-block { padding: 24px 40px; }
+
+  /* Footer */
+  .app-footer { padding: 48px 40px 40px !important; }
+
+  /* Scroll top position */
+  .scroll-top-btn { bottom: 32px !important; right: 32px !important; }
+
+  /* FAB WA position */
+  .fab-wa { bottom: 32px !important; right: 90px !important; }
+
+  /* Modal wider on PC */
+  .modal-sheet {
+    max-width: 560px !important;
+    margin: auto !important;
+    border-radius: 20px !important;
+    max-height: 90vh !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+  }
+  .modal-overlay.open .modal-sheet {
+    transform: translateY(-50%) !important;
+  }
+
+  /* Cart panel narrower, from right */
+  .cart-panel { max-width: 400px !important; }
+
+  /* Loading screen logo bigger on PC */
+  .loading-logo { width: 380px; }
+}
+
+@media (min-width: 1024px) {
+  .featured-products {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+  .category-grid {
+    grid-template-columns: repeat(8, 1fr) !important;
+  }
+}
